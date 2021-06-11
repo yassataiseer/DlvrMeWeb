@@ -12,72 +12,6 @@
   "ProjectWorkspaceState": {
     "TagHelpers": [
       {
-        "HashCode": -72634127,
-        "Kind": "Components.Component",
-        "Name": "DlvrMeWeb.Pages.Counter",
-        "AssemblyName": "DlvrMeWeb",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Counter"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "DlvrMeWeb.Pages.Counter"
-        }
-      },
-      {
-        "HashCode": -2108942654,
-        "Kind": "Components.Component",
-        "Name": "DlvrMeWeb.Pages.Counter",
-        "AssemblyName": "DlvrMeWeb",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "DlvrMeWeb.Pages.Counter"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "DlvrMeWeb.Pages.Counter",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": 2046564579,
-        "Kind": "Components.Component",
-        "Name": "DlvrMeWeb.Pages.FetchData",
-        "AssemblyName": "DlvrMeWeb",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "FetchData"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "DlvrMeWeb.Pages.FetchData"
-        }
-      },
-      {
-        "HashCode": 1078358273,
-        "Kind": "Components.Component",
-        "Name": "DlvrMeWeb.Pages.FetchData",
-        "AssemblyName": "DlvrMeWeb",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "DlvrMeWeb.Pages.FetchData"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "DlvrMeWeb.Pages.FetchData",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
         "HashCode": 149613640,
         "Kind": "Components.Component",
         "Name": "DlvrMeWeb.Pages.Index",
@@ -197,6 +131,39 @@
         }
       },
       {
+        "HashCode": -779689941,
+        "Kind": "Components.Component",
+        "Name": "DlvrMeWeb.Shared.NavMenu",
+        "AssemblyName": "DlvrMeWeb",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "NavMenu"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "DlvrMeWeb.Shared.NavMenu"
+        }
+      },
+      {
+        "HashCode": -630962446,
+        "Kind": "Components.Component",
+        "Name": "DlvrMeWeb.Shared.NavMenu",
+        "AssemblyName": "DlvrMeWeb",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "DlvrMeWeb.Shared.NavMenu"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "DlvrMeWeb.Shared.NavMenu",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
         "HashCode": -1774656048,
         "Kind": "Components.Component",
         "Name": "DlvrMeWeb.Shared.MainLayout",
@@ -289,39 +256,6 @@
           "Runtime.Name": "Components.None",
           "Common.TypeName": "DlvrMeWeb.Shared.MainLayout.Body",
           "Components.IsSpecialKind": "Components.ChildContent",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": -779689941,
-        "Kind": "Components.Component",
-        "Name": "DlvrMeWeb.Shared.NavMenu",
-        "AssemblyName": "DlvrMeWeb",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "NavMenu"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "DlvrMeWeb.Shared.NavMenu"
-        }
-      },
-      {
-        "HashCode": -630962446,
-        "Kind": "Components.Component",
-        "Name": "DlvrMeWeb.Shared.NavMenu",
-        "AssemblyName": "DlvrMeWeb",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "DlvrMeWeb.Shared.NavMenu"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "DlvrMeWeb.Shared.NavMenu",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -15960,16 +15894,6 @@
     {
       "FilePath": "/Users/yassa/DlvrMeWeb/Pages/Index.razor",
       "TargetPath": "Pages\\Index.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "/Users/yassa/DlvrMeWeb/Pages/Counter.razor",
-      "TargetPath": "Pages\\Counter.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "/Users/yassa/DlvrMeWeb/Pages/FetchData.razor",
-      "TargetPath": "Pages\\FetchData.razor",
       "FileKind": "component"
     },
     {

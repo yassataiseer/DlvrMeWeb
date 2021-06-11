@@ -51,3 +51,5 @@
 /Users/yassa/DlvrMeWeb/obj/Debug/net5.0/DlvrMeWeb.pdb
 /Users/yassa/DlvrMeWeb/obj/Debug/net5.0/DlvrMeWeb.genruntimeconfig.cache
 /Users/yassa/DlvrMeWeb/obj/Debug/net5.0/DlvrMeWeb.csproj.CopyComplete
+/Users/yassa/DlvrMeWeb/obj/Debug/net5.0/RazorDeclaration/Pages/Signup.razor.g.cs
+/Users/yassa/DlvrMeWeb/obj/Debug/net5.0/Razor/Pages/Signup.razor.g.cs

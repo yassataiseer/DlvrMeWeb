@@ -53,3 +53,8 @@
 /Users/yassa/DlvrMeWeb/obj/Debug/net5.0/DlvrMeWeb.csproj.CopyComplete
 /Users/yassa/DlvrMeWeb/obj/Debug/net5.0/RazorDeclaration/Pages/Signup.razor.g.cs
 /Users/yassa/DlvrMeWeb/obj/Debug/net5.0/Razor/Pages/Signup.razor.g.cs
+/Users/yassa/DlvrMeWeb/bin/Debug/net5.0/Aqua.dll
+/Users/yassa/DlvrMeWeb/bin/Debug/net5.0/Aqua.Newtonsoft.Json.dll
+/Users/yassa/DlvrMeWeb/bin/Debug/net5.0/Newtonsoft.Json.dll
+/Users/yassa/DlvrMeWeb/bin/Debug/net5.0/Remote.Linq.dll
+/Users/yassa/DlvrMeWeb/bin/Debug/net5.0/Remote.Linq.Newtonsoft.Json.dll

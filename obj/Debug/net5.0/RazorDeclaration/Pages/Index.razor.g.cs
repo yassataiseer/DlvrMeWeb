@@ -13,13 +13,6 @@ namespace DlvrMeWeb.Pages
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
 #nullable restore
-#line 1 "/Users/yassa/DlvrMeWeb/_Imports.razor"
-using System.Net.Http;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
 #line 2 "/Users/yassa/DlvrMeWeb/_Imports.razor"
 using Microsoft.AspNetCore.Authorization;
 
@@ -82,6 +75,48 @@ using DlvrMeWeb.Shared;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 42 "/Users/yassa/DlvrMeWeb/Pages/Index.razor"
+using System.Net.Http;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 43 "/Users/yassa/DlvrMeWeb/Pages/Index.razor"
+using System.Text;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 44 "/Users/yassa/DlvrMeWeb/Pages/Index.razor"
+using System.Net.Http.Json;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 45 "/Users/yassa/DlvrMeWeb/Pages/Index.razor"
+using System.Web;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 46 "/Users/yassa/DlvrMeWeb/Pages/Index.razor"
+using Newtonsoft.Json.Linq;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 47 "/Users/yassa/DlvrMeWeb/Pages/Index.razor"
+using Newtonsoft.Json;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/")]
     public partial class Index : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -90,6 +125,25 @@ using DlvrMeWeb.Shared;
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 47 "/Users/yassa/DlvrMeWeb/Pages/Index.razor"
+                          
+
+    private string Username;
+    private string Password;
+    private async void  Submit()
+    {
+        using var client = new HttpClient();
+        var byteArray = Encoding.ASCII.GetBytes("Yassa Taiseer:yassa123");
+        client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic",Convert.ToBase64String(byteArray));
+        var result = await client.GetStringAsync("https://dlvrapi.pythonanywhere.com/Users/validate_user/"+Username+"/"+Password);
+        dynamic data = JObject.Parse(result);
+        Console.WriteLine(data.Status);
+    }
+
+#line default
+#line hidden
+#nullable disable
     }
 }
 #pragma warning restore 1591

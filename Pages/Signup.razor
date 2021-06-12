@@ -1,10 +1,43 @@
 ﻿@page "/signup"
 
-<h1>DlvrMe-SignUp</h1>
-<input placeholder="Type Username"/>
-<br>
-<br>
-<input placeholder="Type Password"/>
+<!DOCTYPE html>
+<html>
+<head>
+        <link href="/css/login.css" rel="stylesheet" type="text/css" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<div class="topnav">
+<a><h1>DlvrMe-Signup</h1></a>
+</div>
+<body>
+
+ <br>
+ <br>
+ <br>
+ <br>
+<form>
+<div class="card">
+  <div class="container">
+    <label for="uname"><h3><b>Username</b></h3></label>
+    <input type="text" placeholder="Enter Username" required>
+
+    <label for="psw"><h3><b>Password</b></h3></label>
+    <input type="password" placeholder="Enter Password" required>
+    <label for="psw"><h3><b>Repeat Password</b></h3></label>
+    <input type="password" placeholder="Repeat Password" required>
+        <div class="wrapper">
+    <button class="btn"type="submit">Sign Up</button>
+            </div>
+    <br>
+    <br>
+    <a href="/">Already a user? Login!</a>
+  </div>
+</div>
+</form>
+
+</body>
+</html>
+
 
 @code {
 

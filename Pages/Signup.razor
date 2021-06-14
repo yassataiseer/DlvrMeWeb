@@ -46,17 +46,19 @@
     @using System.Web
     @using Newtonsoft.Json.Linq
     @using Newtonsoft.Json
+    @inject IJSRuntime JsRuntime;
 
     private string Username;
     private string Password;
     private string Rep_Password;
-    private  void Submit(){
+    private async void Submit(){
       Console.WriteLine(Username);
       if ((!string.IsNullOrWhiteSpace(Username)&&!string.IsNullOrWhiteSpace(Password)&&!string.IsNullOrWhiteSpace(Rep_Password))&&Rep_Password==Password){
         Console.WriteLine("YAY");
       }
       else{
-        Console.WriteLine("MISTAKE");
+        //Console.WriteLine("MISTAKE");
+            await JsRuntime.InvokeVoidAsync("alert", "Invalid Credentials!");
       }
 
     }

@@ -19,14 +19,14 @@
 <div class="card">
   <div class="container">
     <label for="uname"><h3><b>Username</b></h3></label>
-    <input type="text" placeholder="Enter Username" required>
+    <input type="text" placeholder="Enter Username"  @bind="Username"  required>
 
     <label for="psw"><h3><b>Password</b></h3></label>
-    <input type="password" placeholder="Enter Password" required>
+    <input type="password" placeholder="Enter Password"  @bind="Password"  required>
     <label for="psw"><h3><b>Repeat Password</b></h3></label>
-    <input type="password" placeholder="Repeat Password" required>
+    <input type="password" placeholder="Repeat Password" @bind="Rep_Password"  required>
         <div class="wrapper">
-    <button class="btn"type="submit">Sign Up</button>
+    <button class="btn"type="submit" @onclick="@Submit">Sign Up</button>
             </div>
     <br>
     <br>
@@ -47,4 +47,17 @@
     @using Newtonsoft.Json.Linq
     @using Newtonsoft.Json
 
+    private string Username;
+    private string Password;
+    private string Rep_Password;
+    private  void Submit(){
+      Console.WriteLine(Username);
+      if ((!string.IsNullOrWhiteSpace(Username)&&!string.IsNullOrWhiteSpace(Password)&&!string.IsNullOrWhiteSpace(Rep_Password))&&Rep_Password==Password){
+        Console.WriteLine("YAY");
+      }
+      else{
+        Console.WriteLine("MISTAKE");
+      }
+
+    }
 }

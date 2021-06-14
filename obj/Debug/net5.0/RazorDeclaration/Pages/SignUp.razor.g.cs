@@ -125,6 +125,27 @@ using Newtonsoft.Json;
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 48 "/Users/yassa/DlvrMeWeb/Pages/Signup.razor"
+                          
+
+    private string Username;
+    private string Password;
+    private string Rep_Password;
+    private  void Submit(){
+      Console.WriteLine(Username);
+      if ((!string.IsNullOrWhiteSpace(Username)&&!string.IsNullOrWhiteSpace(Password)&&!string.IsNullOrWhiteSpace(Rep_Password))&&Rep_Password==Password){
+        Console.WriteLine("YAY");
+      }
+      else{
+        Console.WriteLine("MISTAKE");
+      }
+
+    }
+
+#line default
+#line hidden
+#nullable disable
     }
 }
 #pragma warning restore 1591

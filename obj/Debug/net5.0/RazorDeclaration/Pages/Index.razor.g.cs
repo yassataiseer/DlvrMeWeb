@@ -76,42 +76,42 @@ using DlvrMeWeb.Shared;
 #line hidden
 #nullable disable
 #nullable restore
-#line 42 "/Users/yassa/DlvrMeWeb/Pages/Index.razor"
+#line 40 "/Users/yassa/DlvrMeWeb/Pages/Index.razor"
 using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 43 "/Users/yassa/DlvrMeWeb/Pages/Index.razor"
+#line 41 "/Users/yassa/DlvrMeWeb/Pages/Index.razor"
 using System.Text;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 44 "/Users/yassa/DlvrMeWeb/Pages/Index.razor"
+#line 42 "/Users/yassa/DlvrMeWeb/Pages/Index.razor"
 using System.Net.Http.Json;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 45 "/Users/yassa/DlvrMeWeb/Pages/Index.razor"
+#line 43 "/Users/yassa/DlvrMeWeb/Pages/Index.razor"
 using System.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 46 "/Users/yassa/DlvrMeWeb/Pages/Index.razor"
+#line 44 "/Users/yassa/DlvrMeWeb/Pages/Index.razor"
 using Newtonsoft.Json.Linq;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 47 "/Users/yassa/DlvrMeWeb/Pages/Index.razor"
+#line 45 "/Users/yassa/DlvrMeWeb/Pages/Index.razor"
 using Newtonsoft.Json;
 
 #line default
@@ -126,24 +126,32 @@ using Newtonsoft.Json;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 47 "/Users/yassa/DlvrMeWeb/Pages/Index.razor"
-                          
+#line 49 "/Users/yassa/DlvrMeWeb/Pages/Index.razor"
 
     private string Username;
     private string Password;
     private async void  Submit()
     {
+      if (!string.IsNullOrWhiteSpace(Username)&&!string.IsNullOrWhiteSpace(Password)){
         using var client = new HttpClient();
         var byteArray = Encoding.ASCII.GetBytes("Yassa Taiseer:yassa123");
         client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic",Convert.ToBase64String(byteArray));
         var result = await client.GetStringAsync("https://dlvrapi.pythonanywhere.com/Users/validate_user/"+Username+"/"+Password);
         dynamic data = JObject.Parse(result);
         Console.WriteLine(data.Status);
+        NavManager.NavigateTo("/home",true); 
+        }
+        else{
+          await JsRuntime.InvokeVoidAsync("alert", "Invalid Credentials!");
+        }
     }
 
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IJSRuntime JsRuntime { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager UriHelper { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavManager { get; set; }
     }
 }
 #pragma warning restore 1591

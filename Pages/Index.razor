@@ -15,7 +15,6 @@
  <br>
  <br>
  <br>
-<form>
 <div class="card">
   <div class="container">
     <label for="uname"><h3><b>Username</b></h3></label>
@@ -24,7 +23,7 @@
     <label for="psw"><h3><b>Password</b></h3></label>
     <input type="password" placeholder="Enter Password"  @bind="Password"   required>
     <div class="wrapper">
-    <button class="btn"type="submit" @onclick="@Submit">Login</button>
+    <button class="btn"type="submit" @onclick="@Submit" >Login</button>
     </div>
     <br>
     <br>
@@ -32,7 +31,6 @@
   </div>
   </div>
 
-</form>
 
 </body>
 </html>
@@ -45,16 +43,25 @@
     @using System.Web
     @using Newtonsoft.Json.Linq
     @using Newtonsoft.Json
+    @inject NavigationManager NavManager
+    @inject NavigationManager UriHelper
+    @inject IJSRuntime JsRuntime;
 
     private string Username;
     private string Password;
     private async void  Submit()
     {
+      if (!string.IsNullOrWhiteSpace(Username)&&!string.IsNullOrWhiteSpace(Password)){
         using var client = new HttpClient();
         var byteArray = Encoding.ASCII.GetBytes("Yassa Taiseer:yassa123");
         client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic",Convert.ToBase64String(byteArray));
         var result = await client.GetStringAsync("https://dlvrapi.pythonanywhere.com/Users/validate_user/"+Username+"/"+Password);
         dynamic data = JObject.Parse(result);
         Console.WriteLine(data.Status);
+        NavManager.NavigateTo("/home",true); 
+        }
+        else{
+          await JsRuntime.InvokeVoidAsync("alert", "Invalid Credentials!");
+        }
     }
 }

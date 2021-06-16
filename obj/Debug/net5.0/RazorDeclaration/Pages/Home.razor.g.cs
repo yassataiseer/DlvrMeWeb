@@ -13,6 +13,13 @@ namespace DlvrMeWeb.Pages
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
 #nullable restore
+#line 1 "/Users/yassa/DlvrMeWeb/_Imports.razor"
+using System.Net.Http;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 2 "/Users/yassa/DlvrMeWeb/_Imports.razor"
 using Microsoft.AspNetCore.Authorization;
 
@@ -75,78 +82,14 @@ using DlvrMeWeb.Shared;
 #line default
 #line hidden
 #nullable disable
-#nullable restore
-#line 43 "/Users/yassa/DlvrMeWeb/Pages/Signup.razor"
-using System.Net.Http;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 44 "/Users/yassa/DlvrMeWeb/Pages/Signup.razor"
-using System.Text;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 45 "/Users/yassa/DlvrMeWeb/Pages/Signup.razor"
-using System.Net.Http.Json;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 46 "/Users/yassa/DlvrMeWeb/Pages/Signup.razor"
-using System.Web;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 47 "/Users/yassa/DlvrMeWeb/Pages/Signup.razor"
-using Newtonsoft.Json.Linq;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 48 "/Users/yassa/DlvrMeWeb/Pages/Signup.razor"
-using Newtonsoft.Json;
-
-#line default
-#line hidden
-#nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/signup")]
-    public partial class Signup : Microsoft.AspNetCore.Components.ComponentBase
+    [Microsoft.AspNetCore.Components.RouteAttribute("/home")]
+    public partial class Home : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
         {
         }
         #pragma warning restore 1998
-#nullable restore
-#line 50 "/Users/yassa/DlvrMeWeb/Pages/Signup.razor"
-
-    private string Username;
-    private string Password;
-    private string Rep_Password;
-    private async void Submit(){
-      Console.WriteLine(Username);
-      if ((!string.IsNullOrWhiteSpace(Username)&&!string.IsNullOrWhiteSpace(Password)&&!string.IsNullOrWhiteSpace(Rep_Password))&&Rep_Password==Password){
-        Console.WriteLine("YAY");
-      }
-      else{
-        //Console.WriteLine("MISTAKE");
-            await JsRuntime.InvokeVoidAsync("alert", "Invalid Credentials!");
-      }
-
-    }
-
-#line default
-#line hidden
-#nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IJSRuntime JsRuntime { get; set; }
     }
 }
 #pragma warning restore 1591

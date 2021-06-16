@@ -57,8 +57,14 @@
         client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic",Convert.ToBase64String(byteArray));
         var result = await client.GetStringAsync("https://dlvrapi.pythonanywhere.com/Users/validate_user/"+Username+"/"+Password);
         dynamic data = JObject.Parse(result);
-        Console.WriteLine(data.Status);
-        NavManager.NavigateTo("/home",true); 
+        //Console.WriteLine(data.Status);
+        if (data.Status=="true"){
+          NavManager.NavigateTo("/home",true); 
+        }
+        else{
+          await JsRuntime.InvokeVoidAsync("alert", "Invalid Credentials!");
+        }
+
         }
         else{
           await JsRuntime.InvokeVoidAsync("alert", "Invalid Credentials!");

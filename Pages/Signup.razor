@@ -15,7 +15,6 @@
  <br>
  <br>
  <br>
-<form>
 <div class="card">
   <div class="container">
     <label for="uname"><h3><b>Username</b></h3></label>
@@ -33,7 +32,6 @@
     <a href="/">Already a user? Login!</a>
   </div>
 </div>
-</form>
 
 </body>
 </html>
@@ -46,15 +44,28 @@
     @using System.Web
     @using Newtonsoft.Json.Linq
     @using Newtonsoft.Json
+    @inject NavigationManager NavManager
+    @inject NavigationManager UriHelper
     @inject IJSRuntime JsRuntime;
 
     private string Username;
     private string Password;
     private string Rep_Password;
     private async void Submit(){
-      Console.WriteLine(Username);
       if ((!string.IsNullOrWhiteSpace(Username)&&!string.IsNullOrWhiteSpace(Password)&&!string.IsNullOrWhiteSpace(Rep_Password))&&Rep_Password==Password){
-        Console.WriteLine("YAY");
+        using var client = new HttpClient();
+        var byteArray = Encoding.ASCII.GetBytes("Yassa Taiseer:yassa123");
+        client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic",Convert.ToBase64String(byteArray));
+        var result = await client.GetStringAsync("https://dlvrapi.pythonanywhere.com/Users/mk_user/"+Username+"/"+Password);
+        dynamic data = JObject.Parse(result);
+        Console.WriteLine(data.Status);
+        if (data.Status=="true"){
+          NavManager.NavigateTo("/home",true); 
+        } 
+        else {
+          Console.WriteLine("HHELLFRWEQOPFROP");
+            await JsRuntime.InvokeVoidAsync("alert", "This Username Is Already Taken");
+        }
       }
       else{
         //Console.WriteLine("MISTAKE");

@@ -2,7 +2,33 @@
 <h3>Home</h3>
 
 
+<!DOCTYPE html>
+<html>
+<head>
+        <link href="/css/login.css" rel="stylesheet" type="text/css" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<div class="topnav">
+<a><h1>Orders</h1></a>
+</div>
+<body>
 
+ <br>
+ <br>
+ <br>
+ <br>
+ 
+@foreach (var specificData in UserData)
+{
+<div class="card">
+<div class="container">
+    <h3>@specificData.Address</h3>
+</div>
+</div>
+}
+
+</body>
+</html>
 
 
 
@@ -43,7 +69,10 @@
             }
     }
 
-
+    protected override async Task OnInitializedAsync()
+    {
+       await ViewData();
+    }
 
 
 

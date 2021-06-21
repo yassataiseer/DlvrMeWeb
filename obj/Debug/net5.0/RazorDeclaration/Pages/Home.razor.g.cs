@@ -13,13 +13,6 @@ namespace DlvrMeWeb.Pages
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
 #nullable restore
-#line 1 "/Users/yassa/DlvrMeWeb/_Imports.razor"
-using System.Net.Http;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
 #line 2 "/Users/yassa/DlvrMeWeb/_Imports.razor"
 using Microsoft.AspNetCore.Authorization;
 
@@ -82,6 +75,48 @@ using DlvrMeWeb.Shared;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 41 "/Users/yassa/DlvrMeWeb/Pages/Home.razor"
+using System.Net.Http;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 42 "/Users/yassa/DlvrMeWeb/Pages/Home.razor"
+using System.Text;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 43 "/Users/yassa/DlvrMeWeb/Pages/Home.razor"
+using System.Net.Http.Json;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 44 "/Users/yassa/DlvrMeWeb/Pages/Home.razor"
+using System.Web;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 45 "/Users/yassa/DlvrMeWeb/Pages/Home.razor"
+using Newtonsoft.Json.Linq;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 46 "/Users/yassa/DlvrMeWeb/Pages/Home.razor"
+using Newtonsoft.Json;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/home")]
     public partial class Home : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -90,6 +125,44 @@ using DlvrMeWeb.Shared;
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 50 "/Users/yassa/DlvrMeWeb/Pages/Home.razor"
+    private List<orderData> UserData = new();
+    private async Task ViewData (){
+
+            using var client = new HttpClient();
+            var byteArray = Encoding.ASCII.GetBytes("Yassa Taiseer:yassa123");
+            client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic",Convert.ToBase64String(byteArray));
+            var result = await client.GetStringAsync("https://dlvrapi.pythonanywhere.com/Orders/all_order");
+
+            JArray data = JArray.Parse(result);
+            foreach (dynamic obj in data){
+                    UserData.Add(new orderData(){
+                    Address = obj.Address,
+                    Description  = obj.Description, 
+                    Item = obj.Item, 
+                    Latitude = obj.Latitude, 
+                    Longitude = obj.Longitude, 
+                    Name = obj.Name, 
+                    Price = obj.Price
+                });
+            }
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+       await ViewData();
+    }
+
+
+
+
+#line default
+#line hidden
+#nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IJSRuntime JsRuntime { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager UriHelper { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavManager { get; set; }
     }
 }
 #pragma warning restore 1591

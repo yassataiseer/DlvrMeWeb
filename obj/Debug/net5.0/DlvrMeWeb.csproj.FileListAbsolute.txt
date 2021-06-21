@@ -60,3 +60,14 @@
 /Users/yassa/DlvrMeWeb/bin/Debug/net5.0/Remote.Linq.Newtonsoft.Json.dll
 /Users/yassa/DlvrMeWeb/obj/Debug/net5.0/RazorDeclaration/Pages/Home.razor.g.cs
 /Users/yassa/DlvrMeWeb/obj/Debug/net5.0/Razor/Pages/Home.razor.g.cs
+/Users/yassa/DlvrMeWeb/bin/Debug/net5.0/Blazored.LocalStorage.dll
+/Users/yassa/DlvrMeWeb/bin/Debug/net5.0/Bunit.Core.dll
+/Users/yassa/DlvrMeWeb/bin/Debug/net5.0/ch1seL.Blazored.LocalStorage.Concurrent.dll
+/Users/yassa/DlvrMeWeb/bin/Debug/net5.0/Microsoft.AspNetCore.Authorization.dll
+/Users/yassa/DlvrMeWeb/bin/Debug/net5.0/Microsoft.AspNetCore.Components.dll
+/Users/yassa/DlvrMeWeb/bin/Debug/net5.0/Microsoft.AspNetCore.Components.Forms.dll
+/Users/yassa/DlvrMeWeb/bin/Debug/net5.0/Microsoft.AspNetCore.Components.Web.dll
+/Users/yassa/DlvrMeWeb/bin/Debug/net5.0/Microsoft.AspNetCore.Metadata.dll
+/Users/yassa/DlvrMeWeb/bin/Debug/net5.0/Microsoft.Extensions.DependencyInjection.dll
+/Users/yassa/DlvrMeWeb/bin/Debug/net5.0/Microsoft.JSInterop.dll
+/Users/yassa/DlvrMeWeb/bin/Debug/net5.0/System.IO.Pipelines.dll

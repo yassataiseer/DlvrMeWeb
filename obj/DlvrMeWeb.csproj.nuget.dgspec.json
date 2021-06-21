@@ -38,6 +38,10 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Blazored.LocalStorage": {
+              "target": "Package",
+              "version": "[4.1.2, )"
+            },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.1, )"
@@ -45,6 +49,10 @@
             "Remote.Linq.Newtonsoft.Json": {
               "target": "Package",
               "version": "[6.3.0, )"
+            },
+            "ch1seL.Blazored.LocalStorage.Concurrent": {
+              "target": "Package",
+              "version": "[0.0.3, )"
             }
           },
           "imports": [

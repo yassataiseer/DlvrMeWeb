@@ -76,42 +76,42 @@ using DlvrMeWeb.Shared;
 #line hidden
 #nullable disable
 #nullable restore
-#line 41 "/Users/yassa/DlvrMeWeb/Pages/Signup.razor"
+#line 42 "/Users/yassa/DlvrMeWeb/Pages/Signup.razor"
 using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 42 "/Users/yassa/DlvrMeWeb/Pages/Signup.razor"
+#line 43 "/Users/yassa/DlvrMeWeb/Pages/Signup.razor"
 using System.Text;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 43 "/Users/yassa/DlvrMeWeb/Pages/Signup.razor"
+#line 44 "/Users/yassa/DlvrMeWeb/Pages/Signup.razor"
 using System.Net.Http.Json;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 44 "/Users/yassa/DlvrMeWeb/Pages/Signup.razor"
+#line 45 "/Users/yassa/DlvrMeWeb/Pages/Signup.razor"
 using System.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 45 "/Users/yassa/DlvrMeWeb/Pages/Signup.razor"
+#line 46 "/Users/yassa/DlvrMeWeb/Pages/Signup.razor"
 using Newtonsoft.Json.Linq;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 46 "/Users/yassa/DlvrMeWeb/Pages/Signup.razor"
+#line 47 "/Users/yassa/DlvrMeWeb/Pages/Signup.razor"
 using Newtonsoft.Json;
 
 #line default
@@ -126,7 +126,7 @@ using Newtonsoft.Json;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 50 "/Users/yassa/DlvrMeWeb/Pages/Signup.razor"
+#line 51 "/Users/yassa/DlvrMeWeb/Pages/Signup.razor"
 
     private string Username;
     private string Password;
@@ -159,6 +159,7 @@ using Newtonsoft.Json;
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IJSRuntime JsRuntime { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager UriHelper { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavManager { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private Blazored.LocalStorage.ILocalStorageService localStorage { get; set; }
     }
 }
 #pragma warning restore 1591

@@ -1,6 +1,50 @@
 ﻿@page "/home"
 <h3>Home</h3>
 
+
+
+
+
+
+
+
+
+
+
 @code {
+    @using System.Net.Http
+    @using System.Text 
+    @using System.Net.Http.Json
+    @using System.Web
+    @using Newtonsoft.Json.Linq
+    @using Newtonsoft.Json
+    @inject NavigationManager NavManager
+    @inject NavigationManager UriHelper
+    @inject IJSRuntime JsRuntime;
+    private List<orderData> UserData = new();
+    private async Task ViewData (){
+
+            using var client = new HttpClient();
+            var byteArray = Encoding.ASCII.GetBytes("Yassa Taiseer:yassa123");
+            client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic",Convert.ToBase64String(byteArray));
+            var result = await client.GetStringAsync("https://dlvrapi.pythonanywhere.com/Orders/all_order");
+
+            JArray data = JArray.Parse(result);
+            foreach (dynamic obj in data){
+                    UserData.Add(new orderData(){
+                    Address = obj.Address,
+                    Description  = obj.Description, 
+                    Item = obj.Item, 
+                    Latitude = obj.Latitude, 
+                    Longitude = obj.Longitude, 
+                    Name = obj.Name, 
+                    Price = obj.Price
+                });
+            }
+    }
+
+
+
+
 
 }

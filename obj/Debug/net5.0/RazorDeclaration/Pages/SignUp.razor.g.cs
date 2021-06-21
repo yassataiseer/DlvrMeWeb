@@ -143,13 +143,12 @@ using Newtonsoft.Json;
           NavManager.NavigateTo("/home",true); 
         } 
         else {
-          Console.WriteLine("HHELLFRWEQOPFROP");
-            await JsRuntime.InvokeVoidAsync("alert", "This Username Is Already Taken");
+          await JsRuntime.InvokeVoidAsync("alert", "This Username Is Already Taken");
         }
       }
       else{
         //Console.WriteLine("MISTAKE");
-            await JsRuntime.InvokeVoidAsync("alert", "Invalid Credentials!");
+          await JsRuntime.InvokeVoidAsync("alert", "Invalid Credentials!");
       }
 
     }

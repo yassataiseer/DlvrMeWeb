@@ -140,6 +140,7 @@ using Newtonsoft.Json;
         dynamic data = JObject.Parse(result);
         //Console.WriteLine(data.Status);
         if (data.Status=="true"){
+          //var test = await JSRuntime.InvokeAsync<string>("blazorExtensions.WriteCookie", "name", Username, 1);
           NavManager.NavigateTo("/home",true); 
         }
         else{

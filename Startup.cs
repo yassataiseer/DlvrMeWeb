@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using DlvrMeWeb.Data;
+using Cloudcrate.AspNetCore.Blazor.Browser.Storage;
 
 namespace DlvrMeWeb
 {
@@ -27,8 +28,10 @@ namespace DlvrMeWeb
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+            services.AddStorage();
             services.AddServerSideBlazor();
-            services.AddSingleton<WeatherForecastService>();  // local storage
+            services.AddSingleton<WeatherForecastService>();
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

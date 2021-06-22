@@ -76,42 +76,49 @@ using DlvrMeWeb.Shared;
 #line hidden
 #nullable disable
 #nullable restore
-#line 40 "/Users/yassa/DlvrMeWeb/Pages/Index.razor"
-using System.Net.Http;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 41 "/Users/yassa/DlvrMeWeb/Pages/Index.razor"
-using System.Text;
+#line 2 "/Users/yassa/DlvrMeWeb/Pages/Index.razor"
+using Cloudcrate.AspNetCore.Blazor.Browser.Storage;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 42 "/Users/yassa/DlvrMeWeb/Pages/Index.razor"
-using System.Net.Http.Json;
+using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 43 "/Users/yassa/DlvrMeWeb/Pages/Index.razor"
-using System.Web;
+using System.Text;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 44 "/Users/yassa/DlvrMeWeb/Pages/Index.razor"
-using Newtonsoft.Json.Linq;
+using System.Net.Http.Json;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 45 "/Users/yassa/DlvrMeWeb/Pages/Index.razor"
+using System.Web;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 46 "/Users/yassa/DlvrMeWeb/Pages/Index.razor"
+using Newtonsoft.Json.Linq;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 47 "/Users/yassa/DlvrMeWeb/Pages/Index.razor"
 using Newtonsoft.Json;
 
 #line default
@@ -126,7 +133,7 @@ using Newtonsoft.Json;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 49 "/Users/yassa/DlvrMeWeb/Pages/Index.razor"
+#line 51 "/Users/yassa/DlvrMeWeb/Pages/Index.razor"
 
     private string Username;
     private string Password;
@@ -141,6 +148,8 @@ using Newtonsoft.Json;
         //Console.WriteLine(data.Status);
         if (data.Status=="true"){
           //var test = await JSRuntime.InvokeAsync<string>("blazorExtensions.WriteCookie", "name", Username, 1);
+          //System.Web.HttpContext.Current.Response.Cookies["userName"].Value = Username;  
+          await Storage.SetItemAsync("Username",Username); 
           NavManager.NavigateTo("/home",true); 
         }
         else{
@@ -159,6 +168,7 @@ using Newtonsoft.Json;
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IJSRuntime JsRuntime { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager UriHelper { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavManager { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private LocalStorage Storage { get; set; }
     }
 }
 #pragma warning restore 1591

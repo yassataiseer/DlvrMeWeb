@@ -111,35 +111,55 @@
         }
       },
       {
-        "HashCode": 349656940,
+        "HashCode": -711183133,
         "Kind": "Components.Component",
-        "Name": "DlvrMeWeb.App",
+        "Name": "DlvrMeWeb.Shared.SurveyPrompt",
         "AssemblyName": "DlvrMeWeb",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "App"
+            "TagName": "SurveyPrompt"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "Title",
+            "TypeName": "System.String",
+            "Metadata": {
+              "Common.PropertyName": "Title"
+            }
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "DlvrMeWeb.App"
+          "Common.TypeName": "DlvrMeWeb.Shared.SurveyPrompt"
         }
       },
       {
-        "HashCode": -824059496,
+        "HashCode": 1864176668,
         "Kind": "Components.Component",
-        "Name": "DlvrMeWeb.App",
+        "Name": "DlvrMeWeb.Shared.SurveyPrompt",
         "AssemblyName": "DlvrMeWeb",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "DlvrMeWeb.App"
+            "TagName": "DlvrMeWeb.Shared.SurveyPrompt"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "Title",
+            "TypeName": "System.String",
+            "Metadata": {
+              "Common.PropertyName": "Title"
+            }
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "DlvrMeWeb.App",
+          "Common.TypeName": "DlvrMeWeb.Shared.SurveyPrompt",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -273,55 +293,133 @@
         }
       },
       {
-        "HashCode": -711183133,
+        "HashCode": 349656940,
         "Kind": "Components.Component",
-        "Name": "DlvrMeWeb.Shared.SurveyPrompt",
+        "Name": "DlvrMeWeb.App",
         "AssemblyName": "DlvrMeWeb",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "SurveyPrompt"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Title",
-            "TypeName": "System.String",
-            "Metadata": {
-              "Common.PropertyName": "Title"
-            }
+            "TagName": "App"
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "DlvrMeWeb.Shared.SurveyPrompt"
+          "Common.TypeName": "DlvrMeWeb.App"
         }
       },
       {
-        "HashCode": 1864176668,
+        "HashCode": -824059496,
         "Kind": "Components.Component",
-        "Name": "DlvrMeWeb.Shared.SurveyPrompt",
+        "Name": "DlvrMeWeb.App",
         "AssemblyName": "DlvrMeWeb",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "DlvrMeWeb.Shared.SurveyPrompt"
+            "TagName": "DlvrMeWeb.App"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "DlvrMeWeb.App",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": -476750980,
+        "Kind": "Components.Component",
+        "Name": "Bunit.Rendering.FragmentContainer",
+        "AssemblyName": "Bunit.Core",
+        "Documentation": "\n            <summary>\n            Creates an instance of the <see cref=\"T:Bunit.Rendering.FragmentContainer\" />, which is used\n            when a fragment is rendered inside a test contexts render tree.\n            It is primarily used to be able to find the starting point to return.\n            </summary>\n        ",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "FragmentContainer"
           }
         ],
         "BoundAttributes": [
           {
             "Kind": "Components.Component",
-            "Name": "Title",
-            "TypeName": "System.String",
+            "Name": "ChildContent",
+            "TypeName": "Microsoft.AspNetCore.Components.RenderFragment",
+            "Documentation": "\n            <summary>\n            Gets or sets the content to wrap.\n            </summary>\n        ",
             "Metadata": {
-              "Common.PropertyName": "Title"
+              "Common.PropertyName": "ChildContent",
+              "Components.ChildContent": "True"
             }
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "DlvrMeWeb.Shared.SurveyPrompt",
+          "Common.TypeName": "Bunit.Rendering.FragmentContainer"
+        }
+      },
+      {
+        "HashCode": -259025101,
+        "Kind": "Components.Component",
+        "Name": "Bunit.Rendering.FragmentContainer",
+        "AssemblyName": "Bunit.Core",
+        "Documentation": "\n            <summary>\n            Creates an instance of the <see cref=\"T:Bunit.Rendering.FragmentContainer\" />, which is used\n            when a fragment is rendered inside a test contexts render tree.\n            It is primarily used to be able to find the starting point to return.\n            </summary>\n        ",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Bunit.Rendering.FragmentContainer"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "ChildContent",
+            "TypeName": "Microsoft.AspNetCore.Components.RenderFragment",
+            "Documentation": "\n            <summary>\n            Gets or sets the content to wrap.\n            </summary>\n        ",
+            "Metadata": {
+              "Common.PropertyName": "ChildContent",
+              "Components.ChildContent": "True"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Bunit.Rendering.FragmentContainer",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": 1369449924,
+        "Kind": "Components.ChildContent",
+        "Name": "Bunit.Rendering.FragmentContainer.ChildContent",
+        "AssemblyName": "Bunit.Core",
+        "Documentation": "\n            <summary>\n            Gets or sets the content to wrap.\n            </summary>\n        ",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "ChildContent",
+            "ParentTag": "FragmentContainer"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.None",
+          "Common.TypeName": "Bunit.Rendering.FragmentContainer.ChildContent",
+          "Components.IsSpecialKind": "Components.ChildContent"
+        }
+      },
+      {
+        "HashCode": 1145003434,
+        "Kind": "Components.ChildContent",
+        "Name": "Bunit.Rendering.FragmentContainer.ChildContent",
+        "AssemblyName": "Bunit.Core",
+        "Documentation": "\n            <summary>\n            Gets or sets the content to wrap.\n            </summary>\n        ",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "ChildContent",
+            "ParentTag": "Bunit.Rendering.FragmentContainer"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.None",
+          "Common.TypeName": "Bunit.Rendering.FragmentContainer.ChildContent",
+          "Components.IsSpecialKind": "Components.ChildContent",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -1093,104 +1191,6 @@
         "Metadata": {
           "Runtime.Name": "Components.None",
           "Common.TypeName": "Microsoft.AspNetCore.Components.Authorization.CascadingAuthenticationState.ChildContent",
-          "Components.IsSpecialKind": "Components.ChildContent",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": -476750980,
-        "Kind": "Components.Component",
-        "Name": "Bunit.Rendering.FragmentContainer",
-        "AssemblyName": "Bunit.Core",
-        "Documentation": "\n            <summary>\n            Creates an instance of the <see cref=\"T:Bunit.Rendering.FragmentContainer\" />, which is used\n            when a fragment is rendered inside a test contexts render tree.\n            It is primarily used to be able to find the starting point to return.\n            </summary>\n        ",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "FragmentContainer"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "ChildContent",
-            "TypeName": "Microsoft.AspNetCore.Components.RenderFragment",
-            "Documentation": "\n            <summary>\n            Gets or sets the content to wrap.\n            </summary>\n        ",
-            "Metadata": {
-              "Common.PropertyName": "ChildContent",
-              "Components.ChildContent": "True"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Bunit.Rendering.FragmentContainer"
-        }
-      },
-      {
-        "HashCode": -259025101,
-        "Kind": "Components.Component",
-        "Name": "Bunit.Rendering.FragmentContainer",
-        "AssemblyName": "Bunit.Core",
-        "Documentation": "\n            <summary>\n            Creates an instance of the <see cref=\"T:Bunit.Rendering.FragmentContainer\" />, which is used\n            when a fragment is rendered inside a test contexts render tree.\n            It is primarily used to be able to find the starting point to return.\n            </summary>\n        ",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Bunit.Rendering.FragmentContainer"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "ChildContent",
-            "TypeName": "Microsoft.AspNetCore.Components.RenderFragment",
-            "Documentation": "\n            <summary>\n            Gets or sets the content to wrap.\n            </summary>\n        ",
-            "Metadata": {
-              "Common.PropertyName": "ChildContent",
-              "Components.ChildContent": "True"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Bunit.Rendering.FragmentContainer",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": 1369449924,
-        "Kind": "Components.ChildContent",
-        "Name": "Bunit.Rendering.FragmentContainer.ChildContent",
-        "AssemblyName": "Bunit.Core",
-        "Documentation": "\n            <summary>\n            Gets or sets the content to wrap.\n            </summary>\n        ",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "ChildContent",
-            "ParentTag": "FragmentContainer"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.None",
-          "Common.TypeName": "Bunit.Rendering.FragmentContainer.ChildContent",
-          "Components.IsSpecialKind": "Components.ChildContent"
-        }
-      },
-      {
-        "HashCode": 1145003434,
-        "Kind": "Components.ChildContent",
-        "Name": "Bunit.Rendering.FragmentContainer.ChildContent",
-        "AssemblyName": "Bunit.Core",
-        "Documentation": "\n            <summary>\n            Gets or sets the content to wrap.\n            </summary>\n        ",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "ChildContent",
-            "ParentTag": "Bunit.Rendering.FragmentContainer"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.None",
-          "Common.TypeName": "Bunit.Rendering.FragmentContainer.ChildContent",
           "Components.IsSpecialKind": "Components.ChildContent",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }

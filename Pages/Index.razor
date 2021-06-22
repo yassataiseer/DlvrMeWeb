@@ -1,4 +1,6 @@
 @page "/"
+@using Cloudcrate.AspNetCore.Blazor.Browser.Storage;
+@inject LocalStorage Storage
 
 <!DOCTYPE html>
 <html>
@@ -60,6 +62,8 @@
         //Console.WriteLine(data.Status);
         if (data.Status=="true"){
           //var test = await JSRuntime.InvokeAsync<string>("blazorExtensions.WriteCookie", "name", Username, 1);
+          //System.Web.HttpContext.Current.Response.Cookies["userName"].Value = Username;  
+          await Storage.SetItemAsync("Username",Username); 
           NavManager.NavigateTo("/home",true); 
         }
         else{

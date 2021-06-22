@@ -76,42 +76,49 @@ using DlvrMeWeb.Shared;
 #line hidden
 #nullable disable
 #nullable restore
-#line 41 "/Users/yassa/DlvrMeWeb/Pages/Home.razor"
-using System.Net.Http;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 42 "/Users/yassa/DlvrMeWeb/Pages/Home.razor"
-using System.Text;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 43 "/Users/yassa/DlvrMeWeb/Pages/Home.razor"
-using System.Net.Http.Json;
+#line 3 "/Users/yassa/DlvrMeWeb/Pages/Home.razor"
+using Cloudcrate.AspNetCore.Blazor.Browser.Storage;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 44 "/Users/yassa/DlvrMeWeb/Pages/Home.razor"
-using System.Web;
+using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 45 "/Users/yassa/DlvrMeWeb/Pages/Home.razor"
-using Newtonsoft.Json.Linq;
+using System.Text;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 46 "/Users/yassa/DlvrMeWeb/Pages/Home.razor"
+using System.Net.Http.Json;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 47 "/Users/yassa/DlvrMeWeb/Pages/Home.razor"
+using System.Web;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 48 "/Users/yassa/DlvrMeWeb/Pages/Home.razor"
+using Newtonsoft.Json.Linq;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 49 "/Users/yassa/DlvrMeWeb/Pages/Home.razor"
 using Newtonsoft.Json;
 
 #line default
@@ -126,9 +133,11 @@ using Newtonsoft.Json;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 50 "/Users/yassa/DlvrMeWeb/Pages/Home.razor"
+#line 53 "/Users/yassa/DlvrMeWeb/Pages/Home.razor"
     private List<orderData> UserData = new();
-    private async Task ViewData (){
+    public string Name;
+    private async Task ViewData  (){
+
 
             using var client = new HttpClient();
             var byteArray = Encoding.ASCII.GetBytes("Yassa Taiseer:yassa123");
@@ -147,11 +156,23 @@ using Newtonsoft.Json;
                     Price = obj.Price
                 });
             }
+            
     }
+    
+        protected override async Task OnAfterRenderAsync(bool firstRender)
+{
+    if (firstRender)
+    {
+        Name = await Storage.GetItemAsync("Username");
+        StateHasChanged();
+    }
+}
 
     protected override async Task OnInitializedAsync()
     {
+       //await OnAfterRenderAsync(true);
        await ViewData();
+       
     }
 
 
@@ -163,6 +184,7 @@ using Newtonsoft.Json;
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IJSRuntime JsRuntime { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager UriHelper { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavManager { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private LocalStorage Storage { get; set; }
     }
 }
 #pragma warning restore 1591

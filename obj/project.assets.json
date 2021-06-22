@@ -69,6 +69,37 @@
           "lib/netstandard2.1/ch1seL.Blazored.LocalStorage.Concurrent.dll": {}
         }
       },
+      "Cloudcrate.AspNetCore.Blazor.Browser.Storage/3.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components": "3.0.0",
+          "Microsoft.AspNetCore.Components.Web": "3.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Cloudcrate.AspNetCore.Blazor.Browser.Storage.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Cloudcrate.AspNetCore.Blazor.Browser.Storage.dll": {}
+        },
+        "build": {
+          "buildTransitive/Cloudcrate.AspNetCore.Blazor.Browser.Storage.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/Cloudcrate.AspNetCore.Blazor.Browser.Storage.props": {}
+        }
+      },
+      "LocalStorage/2.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/LocalStorage.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/LocalStorage.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.Authorization/5.0.5": {
         "type": "package",
         "dependencies": {
@@ -553,6 +584,17 @@
         "compile": {
           "ref/netstandard1.3/System.Threading.Tasks.dll": {}
         }
+      },
+      "Utilities/3.3.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/net40/Utilities.Common.dll": {},
+          "lib/net40/Utilities.dll": {}
+        },
+        "runtime": {
+          "lib/net40/Utilities.Common.dll": {},
+          "lib/net40/Utilities.dll": {}
+        }
       }
     }
   },
@@ -630,6 +672,35 @@
         "ch1sel.blazored.localstorage.concurrent.0.0.3.nupkg.sha512",
         "ch1sel.blazored.localstorage.concurrent.nuspec",
         "lib/netstandard2.1/ch1seL.Blazored.LocalStorage.Concurrent.dll"
+      ]
+    },
+    "Cloudcrate.AspNetCore.Blazor.Browser.Storage/3.0.0": {
+      "sha512": "HWfaNORTZoykBX7pUD4bux94kQzsJNmPu4Sp04qU+PWEF/haMEYNHfWKDi3hxhLRP5tGICnhW2RKPZQS4y38iQ==",
+      "type": "package",
+      "path": "cloudcrate.aspnetcore.blazor.browser.storage/3.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/Cloudcrate.AspNetCore.Blazor.Browser.Storage.props",
+        "build/Microsoft.AspNetCore.StaticWebAssets.props",
+        "buildMultiTargeting/Cloudcrate.AspNetCore.Blazor.Browser.Storage.props",
+        "buildTransitive/Cloudcrate.AspNetCore.Blazor.Browser.Storage.props",
+        "cloudcrate.aspnetcore.blazor.browser.storage.3.0.0.nupkg.sha512",
+        "cloudcrate.aspnetcore.blazor.browser.storage.nuspec",
+        "lib/netstandard2.0/Cloudcrate.AspNetCore.Blazor.Browser.Storage.dll",
+        "staticwebassets/Storage.js"
+      ]
+    },
+    "LocalStorage/2.0.0": {
+      "sha512": "lDck7CQ0roT1WGFqisIp65Tqp9n0+Ay16ID1sE7AwEV+yKSCirZ8O6XZWk6CL3LMfi9QhX/ZL8aH1ekUosgdAQ==",
+      "type": "package",
+      "path": "localstorage/2.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/LocalStorage.dll",
+        "localstorage.2.0.0.nupkg.sha512",
+        "localstorage.nuspec"
       ]
     },
     "Microsoft.AspNetCore.Authorization/5.0.5": {
@@ -2336,13 +2407,30 @@
         "system.threading.tasks.4.3.0.nupkg.sha512",
         "system.threading.tasks.nuspec"
       ]
+    },
+    "Utilities/3.3.0.2": {
+      "sha512": "ZEqeAqy06Js/b7h1fsBumf3EDxGkqZrx4TOpG0q64PDtKeB3Daa+LVbAqa9wGFpgiHCzAbZOaY3MbNPHiZl+gw==",
+      "type": "package",
+      "path": "utilities/3.3.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "content/UtilitiesDocumentation/Utilities.chm",
+        "lib/net40/Utilities.Common.dll",
+        "lib/net40/Utilities.dll",
+        "utilities.3.3.0.2.nupkg.sha512",
+        "utilities.nuspec"
+      ]
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
       "Blazored.LocalStorage >= 4.1.2",
+      "Cloudcrate.AspNetCore.Blazor.Browser.Storage >= 3.0.0",
+      "LocalStorage >= 2.0.0",
       "Newtonsoft.Json >= 13.0.1",
       "Remote.Linq.Newtonsoft.Json >= 6.3.0",
+      "Utilities >= *",
       "ch1seL.Blazored.LocalStorage.Concurrent >= 0.0.3"
     ]
   },
@@ -2387,6 +2475,14 @@
             "target": "Package",
             "version": "[4.1.2, )"
           },
+          "Cloudcrate.AspNetCore.Blazor.Browser.Storage": {
+            "target": "Package",
+            "version": "[3.0.0, )"
+          },
+          "LocalStorage": {
+            "target": "Package",
+            "version": "[2.0.0, )"
+          },
           "Newtonsoft.Json": {
             "target": "Package",
             "version": "[13.0.1, )"
@@ -2394,6 +2490,10 @@
           "Remote.Linq.Newtonsoft.Json": {
             "target": "Package",
             "version": "[6.3.0, )"
+          },
+          "Utilities": {
+            "target": "Package",
+            "version": "[*, )"
           },
           "ch1seL.Blazored.LocalStorage.Concurrent": {
             "target": "Package",
@@ -2421,5 +2521,17 @@
         "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.202/RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Utilities 3.3.0.2' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Utilities",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    }
+  ]
 }

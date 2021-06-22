@@ -1,3 +1,4 @@
 ﻿<StaticWebAssets Version="1.0">
+  <ContentRoot BasePath="_content/Cloudcrate.AspNetCore.Blazor.Browser.Storage" Path="/Users/yassa/.nuget/packages/cloudcrate.aspnetcore.blazor.browser.storage/3.0.0/build/../staticwebassets/" />
   <ContentRoot BasePath="/" Path="/Users/yassa/DlvrMeWeb/obj/Debug/net5.0/scopedcss/bundle/" />
 </StaticWebAssets>

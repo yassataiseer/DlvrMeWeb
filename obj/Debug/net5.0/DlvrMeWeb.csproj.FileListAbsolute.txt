@@ -71,3 +71,7 @@
 /Users/yassa/DlvrMeWeb/bin/Debug/net5.0/Microsoft.Extensions.DependencyInjection.dll
 /Users/yassa/DlvrMeWeb/bin/Debug/net5.0/Microsoft.JSInterop.dll
 /Users/yassa/DlvrMeWeb/bin/Debug/net5.0/System.IO.Pipelines.dll
+/Users/yassa/DlvrMeWeb/bin/Debug/net5.0/Cloudcrate.AspNetCore.Blazor.Browser.Storage.dll
+/Users/yassa/DlvrMeWeb/bin/Debug/net5.0/LocalStorage.dll
+/Users/yassa/DlvrMeWeb/bin/Debug/net5.0/Utilities.Common.dll
+/Users/yassa/DlvrMeWeb/bin/Debug/net5.0/Utilities.dll

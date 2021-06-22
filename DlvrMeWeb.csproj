@@ -7,5 +7,8 @@
     <PackageReference Include="Remote.Linq.Newtonsoft.Json" Version="6.3.0"/>
     <PackageReference Include="Blazored.LocalStorage" Version="4.1.2"/>
     <PackageReference Include="ch1seL.Blazored.LocalStorage.Concurrent" Version="0.0.3"/>
+    <PackageReference Include="LocalStorage" Version="2.0.0"/>
+    <PackageReference Include="Utilities" Version="*"/>
+    <PackageReference Include="Cloudcrate.AspNetCore.Blazor.Browser.Storage" Version="3.0.0"/>
   </ItemGroup>
 </Project>

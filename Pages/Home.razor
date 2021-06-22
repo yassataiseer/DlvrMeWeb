@@ -1,5 +1,7 @@
 ﻿@page "/home"
 <h3>Home</h3>
+@using Cloudcrate.AspNetCore.Blazor.Browser.Storage;
+@inject LocalStorage Storage
 
 
 <!DOCTYPE html>
@@ -22,6 +24,7 @@
 {
 <div class="card">
 <div class="container">
+    <h3>@Name</h3>
     <h3>@specificData.Address</h3>
 </div>
 </div>
@@ -48,7 +51,9 @@
     @inject NavigationManager UriHelper
     @inject IJSRuntime JsRuntime;
     private List<orderData> UserData = new();
-    private async Task ViewData (){
+    public string Name;
+    private async Task ViewData  (){
+
 
             using var client = new HttpClient();
             var byteArray = Encoding.ASCII.GetBytes("Yassa Taiseer:yassa123");
@@ -67,11 +72,23 @@
                     Price = obj.Price
                 });
             }
+            
     }
+    
+        protected override async Task OnAfterRenderAsync(bool firstRender)
+{
+    if (firstRender)
+    {
+        Name = await Storage.GetItemAsync("Username");
+        StateHasChanged();
+    }
+}
 
     protected override async Task OnInitializedAsync()
     {
+       //await OnAfterRenderAsync(true);
        await ViewData();
+       
     }
 
 

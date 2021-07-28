@@ -149,7 +149,10 @@ using Newtonsoft.Json;
         if (data.Status=="true"){
           //var test = await JSRuntime.InvokeAsync<string>("blazorExtensions.WriteCookie", "name", Username, 1);
           //System.Web.HttpContext.Current.Response.Cookies["userName"].Value = Username;  
-          await Storage.SetItemAsync("Username",Username); 
+          //await JSRuntime.InvokeAsync<string>("CreateCookie", "Username", Username, 1);
+          await JsRuntime.InvokeAsync<object>("WriteCookie.WriteCookie",  "Username", Username, 1);
+
+          //await Storage.SetItemAsync("Username",Username); 
           NavManager.NavigateTo("/home",true); 
         }
         else{

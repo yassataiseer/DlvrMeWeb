@@ -1,9 +1,14 @@
 
-window. Alert = function(message) {
-    alert(message);
-}
+// window. Alert = function(message) {
+//     alert(message);
+// }
 window.methods = {
-    CreateCookie: function (name, value, days) {
+
+    alert : function(message){
+        alert(message);
+    },
+
+    CreateCookie: function(name, value, days) {
      var expires;
      if (days) {
         var date = new Date();
@@ -14,5 +19,5 @@ window.methods = {
          expires = "";
      }
       document.cookie = name + "=" + value + expires + "; path=/";
-   }    
+   },
 }

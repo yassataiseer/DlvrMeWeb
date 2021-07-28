@@ -12,35 +12,35 @@
   "ProjectWorkspaceState": {
     "TagHelpers": [
       {
-        "HashCode": -628523138,
+        "HashCode": 387162668,
         "Kind": "Components.Component",
-        "Name": "DlvrMeWeb.Pages.Signup",
+        "Name": "DlvrMeWeb.Pages.Home",
         "AssemblyName": "DlvrMeWeb",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "Signup"
+            "TagName": "Home"
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "DlvrMeWeb.Pages.Signup"
+          "Common.TypeName": "DlvrMeWeb.Pages.Home"
         }
       },
       {
-        "HashCode": 421442382,
+        "HashCode": -1433375308,
         "Kind": "Components.Component",
-        "Name": "DlvrMeWeb.Pages.Signup",
+        "Name": "DlvrMeWeb.Pages.Home",
         "AssemblyName": "DlvrMeWeb",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "DlvrMeWeb.Pages.Signup"
+            "TagName": "DlvrMeWeb.Pages.Home"
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "DlvrMeWeb.Pages.Signup",
+          "Common.TypeName": "DlvrMeWeb.Pages.Home",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -78,35 +78,68 @@
         }
       },
       {
-        "HashCode": 387162668,
+        "HashCode": -628523138,
         "Kind": "Components.Component",
-        "Name": "DlvrMeWeb.Pages.Home",
+        "Name": "DlvrMeWeb.Pages.Signup",
         "AssemblyName": "DlvrMeWeb",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "Home"
+            "TagName": "Signup"
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "DlvrMeWeb.Pages.Home"
+          "Common.TypeName": "DlvrMeWeb.Pages.Signup"
         }
       },
       {
-        "HashCode": -1433375308,
+        "HashCode": 421442382,
         "Kind": "Components.Component",
-        "Name": "DlvrMeWeb.Pages.Home",
+        "Name": "DlvrMeWeb.Pages.Signup",
         "AssemblyName": "DlvrMeWeb",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "DlvrMeWeb.Pages.Home"
+            "TagName": "DlvrMeWeb.Pages.Signup"
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "DlvrMeWeb.Pages.Home",
+          "Common.TypeName": "DlvrMeWeb.Pages.Signup",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": 349656940,
+        "Kind": "Components.Component",
+        "Name": "DlvrMeWeb.App",
+        "AssemblyName": "DlvrMeWeb",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "App"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "DlvrMeWeb.App"
+        }
+      },
+      {
+        "HashCode": -824059496,
+        "Kind": "Components.Component",
+        "Name": "DlvrMeWeb.App",
+        "AssemblyName": "DlvrMeWeb",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "DlvrMeWeb.App"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "DlvrMeWeb.App",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -289,39 +322,6 @@
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
           "Common.TypeName": "DlvrMeWeb.Shared.NavMenu",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": 349656940,
-        "Kind": "Components.Component",
-        "Name": "DlvrMeWeb.App",
-        "AssemblyName": "DlvrMeWeb",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "App"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "DlvrMeWeb.App"
-        }
-      },
-      {
-        "HashCode": -824059496,
-        "Kind": "Components.Component",
-        "Name": "DlvrMeWeb.App",
-        "AssemblyName": "DlvrMeWeb",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "DlvrMeWeb.App"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "DlvrMeWeb.App",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },

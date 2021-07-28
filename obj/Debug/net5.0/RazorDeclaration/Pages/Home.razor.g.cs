@@ -135,14 +135,19 @@ using Newtonsoft.Json;
 #nullable restore
 #line 53 "/Users/yassa/DlvrMeWeb/Pages/Home.razor"
     private List<orderData> UserData = new();
+    public string Username;
     public string Name;
-    private async Task ViewData  (){
-
+    private async void ViewData  (){
 
             using var client = new HttpClient();
             var byteArray = Encoding.ASCII.GetBytes("Yassa Taiseer:yassa123");
             client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic",Convert.ToBase64String(byteArray));
-            var result = await client.GetStringAsync("https://dlvrapi.pythonanywhere.com/Orders/all_order");
+            Username = await JsRuntime.InvokeAsync<string>("ReadCookie.ReadCookie",  "Username");
+
+            Console.WriteLine(Username);
+            Console.WriteLine("Username");
+
+            var result = await client.GetStringAsync("https://dlvrapi.pythonanywhere.com/Orders/spec_order/"+Username);
 
             JArray data = JArray.Parse(result);
             foreach (dynamic obj in data){
@@ -156,6 +161,7 @@ using Newtonsoft.Json;
                     Price = obj.Price
                 });
             }
+            StateHasChanged();
             
     }
     
@@ -163,7 +169,8 @@ using Newtonsoft.Json;
 {
     if (firstRender)
     {
-        Name = await Storage.GetItemAsync("Username");
+
+        //Name = await Storage.GetItemAsync("Username");
         StateHasChanged();
     }
 }
@@ -171,7 +178,8 @@ using Newtonsoft.Json;
     protected override async Task OnInitializedAsync()
     {
        //await OnAfterRenderAsync(true);
-       await ViewData();
+
+        ViewData();
        
     }
 

@@ -173,8 +173,8 @@ using Newtonsoft.Json;
         var result = await client.GetStringAsync("https://dlvrapi.pythonanywhere.com/Orders/del_order/"+Username+"/"+Address+"/"+Item+"/"+Price.ToString(".0##")+"/"+User_info);
         dynamic data = JObject.Parse(result);
         Console.WriteLine(data);
-        StateHasChanged();
-    }
+        NavManager.NavigateTo("/home",true); 
+           }
 
     protected override async Task OnInitializedAsync()
     {

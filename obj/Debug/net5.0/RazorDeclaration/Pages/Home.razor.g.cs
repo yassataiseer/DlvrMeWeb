@@ -83,42 +83,42 @@ using Cloudcrate.AspNetCore.Blazor.Browser.Storage;
 #line hidden
 #nullable disable
 #nullable restore
-#line 49 "/Users/yassa/DlvrMeWeb/Pages/Home.razor"
+#line 55 "/Users/yassa/DlvrMeWeb/Pages/Home.razor"
 using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 50 "/Users/yassa/DlvrMeWeb/Pages/Home.razor"
+#line 56 "/Users/yassa/DlvrMeWeb/Pages/Home.razor"
 using System.Text;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 51 "/Users/yassa/DlvrMeWeb/Pages/Home.razor"
+#line 57 "/Users/yassa/DlvrMeWeb/Pages/Home.razor"
 using System.Net.Http.Json;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 52 "/Users/yassa/DlvrMeWeb/Pages/Home.razor"
+#line 58 "/Users/yassa/DlvrMeWeb/Pages/Home.razor"
 using System.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 53 "/Users/yassa/DlvrMeWeb/Pages/Home.razor"
+#line 59 "/Users/yassa/DlvrMeWeb/Pages/Home.razor"
 using Newtonsoft.Json.Linq;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 54 "/Users/yassa/DlvrMeWeb/Pages/Home.razor"
+#line 60 "/Users/yassa/DlvrMeWeb/Pages/Home.razor"
 using Newtonsoft.Json;
 
 #line default
@@ -133,7 +133,7 @@ using Newtonsoft.Json;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 58 "/Users/yassa/DlvrMeWeb/Pages/Home.razor"
+#line 64 "/Users/yassa/DlvrMeWeb/Pages/Home.razor"
     private List<orderData> UserData = new();
     public string Username;
     public string Name;
@@ -165,19 +165,19 @@ using Newtonsoft.Json;
             
     }
     
-        protected override async Task OnAfterRenderAsync(bool firstRender)
-{
-    if (firstRender)
-    {
-
-        //Name = await Storage.GetItemAsync("Username");
+    private async void  Delete(string Username,string Address,string Item,double Price,string User_info){
+        using var client = new HttpClient();
+        Console.WriteLine(Price.ToString(".0##"));
+        var byteArray = Encoding.ASCII.GetBytes("Yassa Taiseer:yassa123");
+        client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic",Convert.ToBase64String(byteArray)); 
+        var result = await client.GetStringAsync("https://dlvrapi.pythonanywhere.com/Orders/del_order/"+Username+"/"+Address+"/"+Item+"/"+Price.ToString(".0##")+"/"+User_info);
+        dynamic data = JObject.Parse(result);
+        Console.WriteLine(data);
         StateHasChanged();
     }
-}
 
     protected override async Task OnInitializedAsync()
     {
-       //await OnAfterRenderAsync(true);
 
         ViewData();
        

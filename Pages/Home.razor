@@ -24,15 +24,21 @@
 {
 <div class="card">
 <div class="container">
-    <h3><u><b>@specificData.Name</b></u></h3>
-    <h3>The Address is: @specificData.Address</h3>
-    <h3>The Item is: @specificData.Item</h3>
-    <h3>The Price is: @specificData.Price</h3>
+    <h2><u><b>@specificData.Name</b></u></h2>
+    <h6><b>The Address is:</b> @specificData.Address</h6>
+    <h6><b>The Item is:</b> @specificData.Item</h6>
+    <h6><b>The Price is:</b> @specificData.Price</h6>
     
-    <h3>The Description is: @specificData.Description</h3>
+    <h6><b>The Description is:</b> @specificData.Description</h6>
+        <div class="wrapper">
+
+    <button class="btn_del" type="submit" @onclick="() => Delete(specificData.Name,specificData.Address,specificData.Item,specificData.Price,specificData.Description)" >Delete</button>
+    </div>
+</div>
+    <br>
 
 </div>
-</div>
+<br>
 }
 <h6>If you dont see anything it means you have no orders</h6>
 </body>
@@ -86,19 +92,19 @@
             
     }
     
-        protected override async Task OnAfterRenderAsync(bool firstRender)
-{
-    if (firstRender)
-    {
-
-        //Name = await Storage.GetItemAsync("Username");
+    private async void  Delete(string Username,string Address,string Item,double Price,string User_info){
+        using var client = new HttpClient();
+        Console.WriteLine(Price.ToString(".0##"));
+        var byteArray = Encoding.ASCII.GetBytes("Yassa Taiseer:yassa123");
+        client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic",Convert.ToBase64String(byteArray)); 
+        var result = await client.GetStringAsync("https://dlvrapi.pythonanywhere.com/Orders/del_order/"+Username+"/"+Address+"/"+Item+"/"+Price.ToString(".0##")+"/"+User_info);
+        dynamic data = JObject.Parse(result);
+        Console.WriteLine(data);
         StateHasChanged();
     }
-}
 
     protected override async Task OnInitializedAsync()
     {
-       //await OnAfterRenderAsync(true);
 
         ViewData();
        

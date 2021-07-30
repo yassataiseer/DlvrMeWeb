@@ -11,9 +11,12 @@ html {
   h1{
       color:rgb(255,255,255);
   }
-  h3{
+  h3,h2{
       color:rgb(	0, 35, 102);
   }
+  h6{
+    color:rgb(	0, 35, 102);
+}
   input[type=text], input[type=password] {
     width: 100%;
     padding: 12px 20px;
@@ -37,7 +40,7 @@ html {
     width: 20%;
     border-radius: 8px;
   }
-  
+
   button:hover {
     opacity: 0.8;
   }
@@ -172,4 +175,18 @@ html {
   .btn:hover {
       color:rgb(0, 35, 102) ;
     background-color:rgb(255,254,240);
+  }
+  .btn_del {
+    background-color: rgb(250, 0, 53); 
+    border: none; 
+    color: rgb(255,254,240); 
+    padding: 12px 16px;
+    font-size: 20px; 
+    cursor: pointer; 
+  }
+  
+
+  .btn_del:hover {
+      color: rgb(0, 35, 102);
+    background-color:rgb(250, 0, 53);
   }

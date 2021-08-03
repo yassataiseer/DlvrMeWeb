@@ -109,6 +109,7 @@ html {
     background-color:rgb(	0, 35, 102);
     position: fixed;
     top: 0;
+    text-align: center;
     width: 100%;
     position: absolute;
     right: 5px;

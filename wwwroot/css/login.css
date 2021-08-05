@@ -191,3 +191,9 @@ html {
       color: rgb(0, 35, 102);
     background-color:rgb(250, 0, 53);
   }
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }

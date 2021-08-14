@@ -1,0 +1,73 @@
+@page "/Form"
+
+<!DOCTYPE html>
+<html>
+
+<head>
+        <link href="/css/login.css" rel="stylesheet" type="text/css" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+<div class="topnav">
+<b><h1>DlvrMe Order Form</h1></b>
+</div>
+<body>
+<br>
+<br>
+<br>
+<br>    
+<br>
+<div class="card">
+  <div class="container">
+
+    <label for="Address"><h3><b>Address</b></h3></label>
+    <input type="text" placeholder="Address of where to pick up?" required>
+
+    <label for="Location"><h3><b>City & Province/State</b></h3></label>
+    <input type="text" placeholder="City & Province/State?" required>
+
+    <label for="Item"><h3><b>Item</b></h3></label>
+    <input type="text" placeholder="What is the item?" required>
+
+    <label for="Price"><h3><b>Price</b></h3></label>
+    <input type="number" min=0 placeholder="What is the price?" required>
+
+    <label for="Extra Info"><h3><b>Extra Info</b></h3></label>
+    <input type="text" placeholder="Enter any extra information?" required>
+
+
+    <div class="wrapper">
+    <button class="btn"type="submit"  >Login</button>
+    </div>
+    <br>
+  </div>
+  </div>
+<a href="/home">Go Back</a>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>   
+</body>
+
+
+</html>
+
+
+@code {
+
+}
+
+
+
+
+
+
+
+
+
+
+

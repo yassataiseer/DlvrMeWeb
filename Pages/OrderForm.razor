@@ -23,23 +23,23 @@
   <div class="container">
 
     <label for="Address"><h3><b>Address</b></h3></label>
-    <input type="text" placeholder="Address of where to pick up?" required>
+    <input type="text" placeholder="Address of where to pick up?" @bind="Address"  required>
 
     <label for="Location"><h3><b>City & Province/State</b></h3></label>
-    <input type="text" placeholder="City & Province/State?" required>
+    <input type="text" placeholder="City & Province/State?" @bind="Location" required>
 
     <label for="Item"><h3><b>Item</b></h3></label>
-    <input type="text" placeholder="What is the item?" required>
+    <input type="text" placeholder="What is the item?" @bind="Item" required>
 
     <label for="Price"><h3><b>Price</b></h3></label>
-    <input type="number" min=0 placeholder="What is the price?" required>
+    <input type="number" min=0 placeholder="What is the price?" @bind="Price" required>
 
     <label for="Extra Info"><h3><b>Extra Info</b></h3></label>
-    <input type="text" placeholder="Enter any extra information?" required>
+    <input type="text" placeholder="Enter any extra information?" @bind="ExtraInfo" required>
 
 
     <div class="wrapper">
-    <button class="btn"type="submit"  >Login</button>
+    <button class="btn"type="submit" @onclick="@Submit" >Submit</button>
     </div>
     <br>
   </div>
@@ -58,6 +58,65 @@
 
 
 @code {
+    @using System.Net.Http
+    @using System.Text 
+    @using System.Net.Http.Json
+    @using System.Web
+    @using Newtonsoft.Json.Linq
+    @using Newtonsoft.Json
+    @inject NavigationManager NavManager
+    @inject NavigationManager UriHelper
+    @inject IJSRuntime JsRuntime;
+    private string Username;
+    private string Address;
+    private string Location;
+    private string Item;
+    private double Price;
+    private string ExtraInfo;
+
+    private async void  Submit()
+    {
+            if(!string.IsNullOrWhiteSpace(Address)&&!string.IsNullOrWhiteSpace(Location)&&!string.IsNullOrWhiteSpace(Item)&&!string.IsNullOrWhiteSpace(Price.ToString("0.00"))&&!string.IsNullOrWhiteSpace(ExtraInfo))
+            {
+            using var client = new HttpClient();
+            var byteArray = Encoding.ASCII.GetBytes("Yassa Taiseer:yassa123");
+            client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic",Convert.ToBase64String(byteArray));
+            var address_exist = await client.GetStringAsync("https://dlvrapi.pythonanywhere.com/Orders/validate_address/"+Address);
+            dynamic data = JObject.Parse(address_exist);
+            Console.WriteLine(data);
+            if(data.Status==true){
+                var address_in_db = await client.GetStringAsync("https://dlvrapi.pythonanywhere.com/Orders/find_address/"+Address);
+                dynamic data_exist = JObject.Parse(address_in_db);
+                Console.WriteLine(address_in_db);
+
+                if(data_exist.Status==false){
+                    Username = await JsRuntime.InvokeAsync<string>("ReadCookie.ReadCookie",  "Username");
+                    await client.GetStringAsync("https://dlvrapi.pythonanywhere.com/Orders/mk_order/"+ Username +"/" + Address +" "+Location +"/" + Item + "/" +Price.ToString("0.00")+ "/" + ExtraInfo);
+                    NavManager.NavigateTo("/home",true); 
+                }
+                else{
+                    await JsRuntime.InvokeVoidAsync("alert", "Address is taken");
+                }
+            }
+            else{
+                await JsRuntime.InvokeVoidAsync("alert", "Address does not exist");
+            }
+            }
+            else{
+                await JsRuntime.InvokeVoidAsync("alert", "Please fill out form");
+            }
+      
+      
+
+
+    }
+
+
+
+
+
+
+
 
 }
 

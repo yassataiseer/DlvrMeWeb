@@ -167,7 +167,6 @@ using Newtonsoft.Json;
     
     private async void  Delete(string Username,string Address,string Item,double Price,string User_info){
         using var client = new HttpClient();
-        Console.WriteLine(Price.ToString(".0##"));
         var byteArray = Encoding.ASCII.GetBytes("Yassa Taiseer:yassa123");
         client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic",Convert.ToBase64String(byteArray)); 
         var result = await client.GetStringAsync("https://dlvrapi.pythonanywhere.com/Orders/del_order/"+Username+"/"+Address+"/"+Item+"/"+Price.ToString(".0##")+"/"+User_info);

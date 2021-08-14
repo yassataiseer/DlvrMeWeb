@@ -13,13 +13,6 @@ namespace DlvrMeWeb.Pages
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
 #nullable restore
-#line 1 "/Users/yassa/DlvrMeWeb/_Imports.razor"
-using System.Net.Http;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
 #line 2 "/Users/yassa/DlvrMeWeb/_Imports.razor"
 using Microsoft.AspNetCore.Authorization;
 
@@ -82,6 +75,48 @@ using DlvrMeWeb.Shared;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 61 "/Users/yassa/DlvrMeWeb/Pages/OrderForm.razor"
+using System.Net.Http;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 62 "/Users/yassa/DlvrMeWeb/Pages/OrderForm.razor"
+using System.Text;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 63 "/Users/yassa/DlvrMeWeb/Pages/OrderForm.razor"
+using System.Net.Http.Json;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 64 "/Users/yassa/DlvrMeWeb/Pages/OrderForm.razor"
+using System.Web;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 65 "/Users/yassa/DlvrMeWeb/Pages/OrderForm.razor"
+using Newtonsoft.Json.Linq;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 66 "/Users/yassa/DlvrMeWeb/Pages/OrderForm.razor"
+using Newtonsoft.Json;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/Form")]
     public partial class OrderForm : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -90,6 +125,66 @@ using DlvrMeWeb.Shared;
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 70 "/Users/yassa/DlvrMeWeb/Pages/OrderForm.razor"
+    private string Username;
+    private string Address;
+    private string Location;
+    private string Item;
+    private double Price;
+    private string ExtraInfo;
+
+    private async void  Submit()
+    {
+            if(!string.IsNullOrWhiteSpace(Address)&&!string.IsNullOrWhiteSpace(Location)&&!string.IsNullOrWhiteSpace(Item)&&!string.IsNullOrWhiteSpace(Price.ToString("0.00"))&&!string.IsNullOrWhiteSpace(ExtraInfo))
+            {
+            using var client = new HttpClient();
+            var byteArray = Encoding.ASCII.GetBytes("Yassa Taiseer:yassa123");
+            client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic",Convert.ToBase64String(byteArray));
+            var address_exist = await client.GetStringAsync("https://dlvrapi.pythonanywhere.com/Orders/validate_address/"+Address);
+            dynamic data = JObject.Parse(address_exist);
+            Console.WriteLine(data);
+            if(data.Status==true){
+                var address_in_db = await client.GetStringAsync("https://dlvrapi.pythonanywhere.com/Orders/find_address/"+Address);
+                dynamic data_exist = JObject.Parse(address_in_db);
+                Console.WriteLine(address_in_db);
+
+                if(data_exist.Status==false){
+                    Username = await JsRuntime.InvokeAsync<string>("ReadCookie.ReadCookie",  "Username");
+                    await client.GetStringAsync("https://dlvrapi.pythonanywhere.com/Orders/mk_order/"+ Username +"/" + Address +" "+Location +"/" + Item + "/" +Price.ToString("0.00")+ "/" + ExtraInfo);
+                    NavManager.NavigateTo("/home",true); 
+                }
+                else{
+                    await JsRuntime.InvokeVoidAsync("alert", "Address is taken");
+                }
+            }
+            else{
+                await JsRuntime.InvokeVoidAsync("alert", "Address does not exist");
+            }
+            }
+            else{
+                await JsRuntime.InvokeVoidAsync("alert", "Please fill out form");
+            }
+      
+      
+
+
+    }
+
+
+
+
+
+
+
+
+
+#line default
+#line hidden
+#nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IJSRuntime JsRuntime { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager UriHelper { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavManager { get; set; }
     }
 }
 #pragma warning restore 1591

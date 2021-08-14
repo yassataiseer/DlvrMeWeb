@@ -17,6 +17,7 @@
  <br>
 <div class="card">
   <div class="container">
+    <form>
     <img src="Latestlogo.png" alt="Logo is suppose to be here" class="center" >
     <br>
 
@@ -30,7 +31,7 @@
         <div class="wrapper">
     <button class="btn"type="submit" @onclick="@Submit">Sign Up</button>
             </div>
-
+    </form>
     <a href="/">Already a user? Login!</a>
   </div>
 </div>
@@ -71,10 +72,7 @@
           await JsRuntime.InvokeVoidAsync("alert", "This Username Is Already Taken");
         }
       }
-      else{
-        //Console.WriteLine("MISTAKE");
-          await JsRuntime.InvokeVoidAsync("alert", "Invalid Credentials!");
-      }
+
 
     }
 }

@@ -76,42 +76,42 @@ using DlvrMeWeb.Shared;
 #line hidden
 #nullable disable
 #nullable restore
-#line 44 "/Users/yassa/DlvrMeWeb/Pages/Signup.razor"
+#line 45 "/Users/yassa/DlvrMeWeb/Pages/Signup.razor"
 using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 45 "/Users/yassa/DlvrMeWeb/Pages/Signup.razor"
+#line 46 "/Users/yassa/DlvrMeWeb/Pages/Signup.razor"
 using System.Text;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 46 "/Users/yassa/DlvrMeWeb/Pages/Signup.razor"
+#line 47 "/Users/yassa/DlvrMeWeb/Pages/Signup.razor"
 using System.Net.Http.Json;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 47 "/Users/yassa/DlvrMeWeb/Pages/Signup.razor"
+#line 48 "/Users/yassa/DlvrMeWeb/Pages/Signup.razor"
 using System.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 48 "/Users/yassa/DlvrMeWeb/Pages/Signup.razor"
+#line 49 "/Users/yassa/DlvrMeWeb/Pages/Signup.razor"
 using Newtonsoft.Json.Linq;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 49 "/Users/yassa/DlvrMeWeb/Pages/Signup.razor"
+#line 50 "/Users/yassa/DlvrMeWeb/Pages/Signup.razor"
 using Newtonsoft.Json;
 
 #line default
@@ -126,7 +126,7 @@ using Newtonsoft.Json;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 53 "/Users/yassa/DlvrMeWeb/Pages/Signup.razor"
+#line 54 "/Users/yassa/DlvrMeWeb/Pages/Signup.razor"
 
     private string Username;
     private string Password;
@@ -148,10 +148,7 @@ using Newtonsoft.Json;
           await JsRuntime.InvokeVoidAsync("alert", "This Username Is Already Taken");
         }
       }
-      else{
-        //Console.WriteLine("MISTAKE");
-          await JsRuntime.InvokeVoidAsync("alert", "Invalid Credentials!");
-      }
+
 
     }
 

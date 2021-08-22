@@ -1,0 +1,74 @@
+@page "/map"
+@using Cloudcrate.AspNetCore.Blazor.Browser.Storage;
+@inject LocalStorage Storage
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+        <link href="/css/login.css" rel="stylesheet" type="text/css" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<div class="topnav" >
+<h1>Map</h1>
+</div>
+
+<body>
+    
+    <button class="btn"  @onclick="@ReDirect"><i class="fa fa-map"></i> Home </button>
+
+</body> 
+
+
+
+
+</html>
+
+
+
+@code {
+    @using System.Net.Http
+    @using System.Text 
+    @using System.Net.Http.Json
+    @using System.Web
+    @using Newtonsoft.Json.Linq
+    @using Newtonsoft.Json
+    @inject NavigationManager NavManager
+    @inject NavigationManager UriHelper
+    @inject IJSRuntime JsRuntime;
+    private List<orderData> AllData = new();
+
+    private  void  ReDirect(){
+        NavManager.NavigateTo("/home",true); 
+    }
+
+    private async void ViewData  (){
+
+            using var client = new HttpClient();
+            var byteArray = Encoding.ASCII.GetBytes("Yassa Taiseer:yassa123");
+            client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic",Convert.ToBase64String(byteArray));
+            var result = await client.GetStringAsync("https://dlvrapi.pythonanywhere.com/Orders/all_order");
+
+            JArray data = JArray.Parse(result);
+            foreach (dynamic obj in data){
+                    AllData.Add(new orderData(){
+                    Address = obj.Address,
+                    Description  = obj.Description, 
+                    Item = obj.Item, 
+                    Latitude = obj.Latitude, 
+                    Longitude = obj.Longitude, 
+                    Name = obj.Name, 
+                    Price = obj.Price
+                });
+            }
+            StateHasChanged();
+            
+    }
+
+
+}
+

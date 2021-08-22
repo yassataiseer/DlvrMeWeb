@@ -76,56 +76,56 @@ using DlvrMeWeb.Shared;
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "/Users/yassa/DlvrMeWeb/Pages/Home.razor"
+#line 2 "/Users/yassa/DlvrMeWeb/Pages/Map.razor"
 using Cloudcrate.AspNetCore.Blazor.Browser.Storage;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 67 "/Users/yassa/DlvrMeWeb/Pages/Home.razor"
+#line 34 "/Users/yassa/DlvrMeWeb/Pages/Map.razor"
 using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 68 "/Users/yassa/DlvrMeWeb/Pages/Home.razor"
+#line 35 "/Users/yassa/DlvrMeWeb/Pages/Map.razor"
 using System.Text;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 69 "/Users/yassa/DlvrMeWeb/Pages/Home.razor"
+#line 36 "/Users/yassa/DlvrMeWeb/Pages/Map.razor"
 using System.Net.Http.Json;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 70 "/Users/yassa/DlvrMeWeb/Pages/Home.razor"
+#line 37 "/Users/yassa/DlvrMeWeb/Pages/Map.razor"
 using System.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 71 "/Users/yassa/DlvrMeWeb/Pages/Home.razor"
+#line 38 "/Users/yassa/DlvrMeWeb/Pages/Map.razor"
 using Newtonsoft.Json.Linq;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 72 "/Users/yassa/DlvrMeWeb/Pages/Home.razor"
+#line 39 "/Users/yassa/DlvrMeWeb/Pages/Map.razor"
 using Newtonsoft.Json;
 
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/home")]
-    public partial class Home : Microsoft.AspNetCore.Components.ComponentBase
+    [Microsoft.AspNetCore.Components.RouteAttribute("/map")]
+    public partial class Map : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -133,25 +133,19 @@ using Newtonsoft.Json;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 76 "/Users/yassa/DlvrMeWeb/Pages/Home.razor"
+#line 43 "/Users/yassa/DlvrMeWeb/Pages/Map.razor"
     private List<orderData> UserData = new();
-    public string Username;
-    public string Name;
 
     private  void  ReDirect(){
-        NavManager.NavigateTo("/map",true); 
+        NavManager.NavigateTo("/home",true); 
     }
+
     private async void ViewData  (){
 
             using var client = new HttpClient();
             var byteArray = Encoding.ASCII.GetBytes("Yassa Taiseer:yassa123");
             client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic",Convert.ToBase64String(byteArray));
-            Username = await JsRuntime.InvokeAsync<string>("ReadCookie.ReadCookie",  "Username");
-
-            Console.WriteLine(Username);
-            Console.WriteLine("Username");
-
-            var result = await client.GetStringAsync("https://dlvrapi.pythonanywhere.com/Orders/spec_order/"+Username);
+            var result = await client.GetStringAsync("https://dlvrapi.pythonanywhere.com/Orders/all_order");
 
             JArray data = JArray.Parse(result);
             foreach (dynamic obj in data){
@@ -168,24 +162,6 @@ using Newtonsoft.Json;
             StateHasChanged();
             
     }
-    
-    private async void  Delete(string Username,string Address,string Item,double Price,string User_info){
-        using var client = new HttpClient();
-        var byteArray = Encoding.ASCII.GetBytes("Yassa Taiseer:yassa123");
-        client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic",Convert.ToBase64String(byteArray)); 
-        var result = await client.GetStringAsync("https://dlvrapi.pythonanywhere.com/Orders/del_order/"+Username+"/"+Address+"/"+Item+"/"+Price.ToString(".0##")+"/"+User_info);
-        dynamic data = JObject.Parse(result);
-        Console.WriteLine(data);
-        NavManager.NavigateTo("/home",true); 
-           }
-
-    protected override async Task OnInitializedAsync()
-    {
-
-        ViewData();
-       
-    }
-
 
 
 

@@ -13,14 +13,17 @@
 </head>
 <div class="topnav" >
 <h1>Orders</h1>
+<button class="home_button" @onclick="@ReDirect"><i class="fa fa-map"></i> View Map </button>
+
 </div>
 <body>
 
- <br>
- <br>
- <br>
- <br>
- 
+<br>
+<br>
+
+<br>
+<br>
+
 @foreach (var specificData in UserData)
 {
 <div class="card">
@@ -42,9 +45,13 @@
 <br>
 }
 
+
 <a href="/Form" class="float">
 <i class="fa fa-plus my-float"></i>
 </a>
+<br>
+
+
 <h6>If you dont see anything it means you have no orders</h6>
 </body>
 </html>
@@ -69,6 +76,10 @@
     private List<orderData> UserData = new();
     public string Username;
     public string Name;
+
+    private  void  ReDirect(){
+        NavManager.NavigateTo("/map",true); 
+    }
     private async void ViewData  (){
 
             using var client = new HttpClient();

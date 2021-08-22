@@ -77,3 +77,5 @@
 /Users/yassa/DlvrMeWeb/bin/Debug/net5.0/Utilities.dll
 /Users/yassa/DlvrMeWeb/obj/Debug/net5.0/RazorDeclaration/Pages/OrderForm.razor.g.cs
 /Users/yassa/DlvrMeWeb/obj/Debug/net5.0/Razor/Pages/OrderForm.razor.g.cs
+/Users/yassa/DlvrMeWeb/obj/Debug/net5.0/RazorDeclaration/Pages/Map.razor.g.cs
+/Users/yassa/DlvrMeWeb/obj/Debug/net5.0/Razor/Pages/Map.razor.g.cs

@@ -38,6 +38,10 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "BlazorGoogleMaps": {
+              "target": "Package",
+              "version": "[1.0.17, )"
+            },
             "Blazored.LocalStorage": {
               "target": "Package",
               "version": "[4.1.2, )"
@@ -53,6 +57,10 @@
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.1, )"
+            },
+            "Radzen.Blazor": {
+              "target": "Package",
+              "version": "[*, )"
             },
             "Remote.Linq.Newtonsoft.Json": {
               "target": "Package",

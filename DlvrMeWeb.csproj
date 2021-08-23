@@ -3,6 +3,7 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="BlazorGoogleMaps" Version="1.0.17"/>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1"/>
     <PackageReference Include="Remote.Linq.Newtonsoft.Json" Version="6.3.0"/>
     <PackageReference Include="Blazored.LocalStorage" Version="4.1.2"/>
@@ -10,5 +11,6 @@
     <PackageReference Include="LocalStorage" Version="2.0.0"/>
     <PackageReference Include="Utilities" Version="*"/>
     <PackageReference Include="Cloudcrate.AspNetCore.Blazor.Browser.Storage" Version="3.0.0"/>
+    <PackageReference Include="Radzen.Blazor" Version="*"/>
   </ItemGroup>
 </Project>

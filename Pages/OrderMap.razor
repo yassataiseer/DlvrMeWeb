@@ -2,7 +2,8 @@
 @using Cloudcrate.AspNetCore.Blazor.Browser.Storage;
 @inject LocalStorage Storage
 
-
+@using Radzen
+@using Radzen.Blazor
 
 
 <!DOCTYPE html>
@@ -14,17 +15,30 @@
 
 </head>
 <div class="topnav" >
-<h1>Map</h1>
+<h1>Map Of Orders</h1>
 </div>
 
 <body>
-    
+    <br>
+    <br>
+    <br>
+    <br>
     <button class="btn"  @onclick="@ReDirect"><i class="fa fa-map"></i> Home </button>
-
 </body> 
 
 
 
+        <RadzenGoogleMap style="width:100%; height: 500px;"  Zoom=@zoom  MarkerClick=@OnMarkerClick>
+            <Markers>
+                @foreach (var specificData in AllData){
+                    <RadzenGoogleMapMarker  Position=@(new GoogleMapPosition() { Lat = @specificData.Latitude, Lng = @specificData.Longitude }) />
+                }
+            </Markers>
+        </RadzenGoogleMap>
+
+
+
+<h2>something here</h2>
 
 </html>
 
@@ -45,7 +59,6 @@
     private  void  ReDirect(){
         NavManager.NavigateTo("/home",true); 
     }
-
     private async void ViewData  (){
 
             using var client = new HttpClient();
@@ -67,6 +80,20 @@
             }
             StateHasChanged();
             
+    }
+    int zoom = 3;
+
+
+    void OnMarkerClick(RadzenGoogleMapMarker marker)
+    {
+
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+
+        ViewData();
+       
     }
 
 

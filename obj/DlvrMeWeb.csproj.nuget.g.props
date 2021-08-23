@@ -16,6 +16,8 @@
     <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
   </PropertyGroup>
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Import Project="$(NuGetPackageRoot)radzen.blazor/3.9.2/buildTransitive/Radzen.Blazor.props" Condition="Exists('$(NuGetPackageRoot)radzen.blazor/3.9.2/buildTransitive/Radzen.Blazor.props')" />
     <Import Project="$(NuGetPackageRoot)cloudcrate.aspnetcore.blazor.browser.storage/3.0.0/buildTransitive/Cloudcrate.AspNetCore.Blazor.Browser.Storage.props" Condition="Exists('$(NuGetPackageRoot)cloudcrate.aspnetcore.blazor.browser.storage/3.0.0/buildTransitive/Cloudcrate.AspNetCore.Blazor.Browser.Storage.props')" />
+    <Import Project="$(NuGetPackageRoot)blazorgooglemaps/1.0.17/buildTransitive/BlazorGoogleMaps.props" Condition="Exists('$(NuGetPackageRoot)blazorgooglemaps/1.0.17/buildTransitive/BlazorGoogleMaps.props')" />
   </ImportGroup>
 </Project>

@@ -39,7 +39,6 @@
         }
     }
 </script>
-
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -48,7 +47,9 @@
     <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
     <link href="css/site.css" rel="stylesheet" />
     <link href="DlvrMeWeb.styles.css" rel="stylesheet" />
-     <script src="~/script.js"></script>
+    <script src="~/script.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNgC--pVBR5nJqGuoSEMf6PTcMjlWlats&v=3"></script>
+    <link href="_content/Radzen.Blazor/css/default-base.css" rel="stylesheet" />
 
 </head>
 <body>
@@ -65,7 +66,8 @@
         <a href="" class="reload">Reload</a>
         <a class="dismiss">🗙</a>
     </div>
-
+    <script src="_content/BlazorGoogleMaps/objectManager.js"></script>
     <script src="_framework/blazor.server.js"></script>
+    <script src="_content/Radzen.Blazor/Radzen.Blazor.js"></script>
 </body>
 </html>

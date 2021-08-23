@@ -77,5 +77,9 @@
 /Users/yassa/DlvrMeWeb/bin/Debug/net5.0/Utilities.dll
 /Users/yassa/DlvrMeWeb/obj/Debug/net5.0/RazorDeclaration/Pages/OrderForm.razor.g.cs
 /Users/yassa/DlvrMeWeb/obj/Debug/net5.0/Razor/Pages/OrderForm.razor.g.cs
-/Users/yassa/DlvrMeWeb/obj/Debug/net5.0/RazorDeclaration/Pages/Map.razor.g.cs
-/Users/yassa/DlvrMeWeb/obj/Debug/net5.0/Razor/Pages/Map.razor.g.cs
+/Users/yassa/DlvrMeWeb/bin/Debug/net5.0/GoogleMapsComponents.dll
+/Users/yassa/DlvrMeWeb/bin/Debug/net5.0/OneOf.dll
+/Users/yassa/DlvrMeWeb/obj/Debug/net5.0/RazorDeclaration/Pages/OrderMap.razor.g.cs
+/Users/yassa/DlvrMeWeb/obj/Debug/net5.0/Razor/Pages/OrderMap.razor.g.cs
+/Users/yassa/DlvrMeWeb/bin/Debug/net5.0/Radzen.Blazor.dll
+/Users/yassa/DlvrMeWeb/bin/Debug/net5.0/System.Linq.Dynamic.Core.dll

@@ -76,56 +76,70 @@ using DlvrMeWeb.Shared;
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "/Users/yassa/DlvrMeWeb/Pages/Map.razor"
+#line 2 "/Users/yassa/DlvrMeWeb/Pages/OrderMap.razor"
 using Cloudcrate.AspNetCore.Blazor.Browser.Storage;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 34 "/Users/yassa/DlvrMeWeb/Pages/Map.razor"
+#line 5 "/Users/yassa/DlvrMeWeb/Pages/OrderMap.razor"
+using Radzen;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 6 "/Users/yassa/DlvrMeWeb/Pages/OrderMap.razor"
+using Radzen.Blazor;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 48 "/Users/yassa/DlvrMeWeb/Pages/OrderMap.razor"
 using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 35 "/Users/yassa/DlvrMeWeb/Pages/Map.razor"
+#line 49 "/Users/yassa/DlvrMeWeb/Pages/OrderMap.razor"
 using System.Text;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 36 "/Users/yassa/DlvrMeWeb/Pages/Map.razor"
+#line 50 "/Users/yassa/DlvrMeWeb/Pages/OrderMap.razor"
 using System.Net.Http.Json;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 37 "/Users/yassa/DlvrMeWeb/Pages/Map.razor"
+#line 51 "/Users/yassa/DlvrMeWeb/Pages/OrderMap.razor"
 using System.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 38 "/Users/yassa/DlvrMeWeb/Pages/Map.razor"
+#line 52 "/Users/yassa/DlvrMeWeb/Pages/OrderMap.razor"
 using Newtonsoft.Json.Linq;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 39 "/Users/yassa/DlvrMeWeb/Pages/Map.razor"
+#line 53 "/Users/yassa/DlvrMeWeb/Pages/OrderMap.razor"
 using Newtonsoft.Json;
 
 #line default
 #line hidden
 #nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/map")]
-    public partial class Map : Microsoft.AspNetCore.Components.ComponentBase
+    public partial class OrderMap : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -133,13 +147,12 @@ using Newtonsoft.Json;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 43 "/Users/yassa/DlvrMeWeb/Pages/Map.razor"
-    private List<orderData> UserData = new();
+#line 57 "/Users/yassa/DlvrMeWeb/Pages/OrderMap.razor"
+    private List<orderData> AllData = new();
 
     private  void  ReDirect(){
         NavManager.NavigateTo("/home",true); 
     }
-
     private async void ViewData  (){
 
             using var client = new HttpClient();
@@ -149,7 +162,7 @@ using Newtonsoft.Json;
 
             JArray data = JArray.Parse(result);
             foreach (dynamic obj in data){
-                    UserData.Add(new orderData(){
+                    AllData.Add(new orderData(){
                     Address = obj.Address,
                     Description  = obj.Description, 
                     Item = obj.Item, 
@@ -161,6 +174,20 @@ using Newtonsoft.Json;
             }
             StateHasChanged();
             
+    }
+    int zoom = 3;
+
+
+    void OnMarkerClick(RadzenGoogleMapMarker marker)
+    {
+
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+
+        ViewData();
+       
     }
 
 

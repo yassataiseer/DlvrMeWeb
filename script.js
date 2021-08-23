@@ -2,10 +2,13 @@
 // window. Alert = function(message) {
 //     alert(message);
 // }
+import swal from 'sweetalert';
 window.methods = {
 
     alert : function(message){
-        alert(message);
+        swal({
+            title: message
+            });
     },
 
     CreateCookie: function(name, value, days) {

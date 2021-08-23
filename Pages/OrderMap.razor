@@ -28,7 +28,7 @@
 
 
 
-        <RadzenGoogleMap style="width:100%; height: 500px;"  Zoom=@zoom Center=@(new GoogleMapPosition() { Lat = Lat, Lng = Long })  MarkerClick=@OnMarkerClick>
+        <RadzenGoogleMap style="width:100%; height: 500px;"   Center=@(new GoogleMapPosition() { Lat = Lat, Lng = Long })  MarkerClick=@OnMarkerClick>
             <Markers>
                 @foreach (var specificData in AllData){
                     string text = "The address is: "+@specificData.Address+"\n"+" The Item is: "+@specificData.Item+"\n"+" The Price is: "+@specificData.Price.ToString("0.00")+"\n"+" Excess Info: "+@specificData.Description;

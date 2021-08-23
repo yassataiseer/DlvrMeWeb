@@ -97,42 +97,42 @@ using Radzen.Blazor;
 #line hidden
 #nullable disable
 #nullable restore
-#line 48 "/Users/yassa/DlvrMeWeb/Pages/OrderMap.razor"
+#line 49 "/Users/yassa/DlvrMeWeb/Pages/OrderMap.razor"
 using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 49 "/Users/yassa/DlvrMeWeb/Pages/OrderMap.razor"
+#line 50 "/Users/yassa/DlvrMeWeb/Pages/OrderMap.razor"
 using System.Text;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 50 "/Users/yassa/DlvrMeWeb/Pages/OrderMap.razor"
+#line 51 "/Users/yassa/DlvrMeWeb/Pages/OrderMap.razor"
 using System.Net.Http.Json;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 51 "/Users/yassa/DlvrMeWeb/Pages/OrderMap.razor"
+#line 52 "/Users/yassa/DlvrMeWeb/Pages/OrderMap.razor"
 using System.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 52 "/Users/yassa/DlvrMeWeb/Pages/OrderMap.razor"
+#line 53 "/Users/yassa/DlvrMeWeb/Pages/OrderMap.razor"
 using Newtonsoft.Json.Linq;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 53 "/Users/yassa/DlvrMeWeb/Pages/OrderMap.razor"
+#line 54 "/Users/yassa/DlvrMeWeb/Pages/OrderMap.razor"
 using Newtonsoft.Json;
 
 #line default
@@ -147,9 +147,10 @@ using Newtonsoft.Json;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 57 "/Users/yassa/DlvrMeWeb/Pages/OrderMap.razor"
+#line 58 "/Users/yassa/DlvrMeWeb/Pages/OrderMap.razor"
     private List<orderData> AllData = new();
-
+    private double Lat = 42.6977;
+    private double Long = 23.3219;
     private  void  ReDirect(){
         NavManager.NavigateTo("/home",true); 
     }
@@ -178,8 +179,12 @@ using Newtonsoft.Json;
     int zoom = 3;
 
 
-    void OnMarkerClick(RadzenGoogleMapMarker marker)
+    private async void OnMarkerClick(RadzenGoogleMapMarker marker)
     {
+        Console.WriteLine(marker.Title);
+        Lat = marker.Position.Lat;
+        Long = marker.Position.Lng;
+        await JsRuntime.InvokeVoidAsync("alert", marker.Title);
 
     }
 

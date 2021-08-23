@@ -12,6 +12,39 @@
   "ProjectWorkspaceState": {
     "TagHelpers": [
       {
+        "HashCode": 387162668,
+        "Kind": "Components.Component",
+        "Name": "DlvrMeWeb.Pages.Home",
+        "AssemblyName": "DlvrMeWeb",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Home"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "DlvrMeWeb.Pages.Home"
+        }
+      },
+      {
+        "HashCode": -1433375308,
+        "Kind": "Components.Component",
+        "Name": "DlvrMeWeb.Pages.Home",
+        "AssemblyName": "DlvrMeWeb",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "DlvrMeWeb.Pages.Home"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "DlvrMeWeb.Pages.Home",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
         "HashCode": 1907131256,
         "Kind": "Components.Component",
         "Name": "DlvrMeWeb.Pages.OrderForm",
@@ -41,39 +74,6 @@
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
           "Common.TypeName": "DlvrMeWeb.Pages.OrderForm",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": 149613640,
-        "Kind": "Components.Component",
-        "Name": "DlvrMeWeb.Pages.Index",
-        "AssemblyName": "DlvrMeWeb",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Index"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "DlvrMeWeb.Pages.Index"
-        }
-      },
-      {
-        "HashCode": -1317068757,
-        "Kind": "Components.Component",
-        "Name": "DlvrMeWeb.Pages.Index",
-        "AssemblyName": "DlvrMeWeb",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "DlvrMeWeb.Pages.Index"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "DlvrMeWeb.Pages.Index",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -111,35 +111,35 @@
         }
       },
       {
-        "HashCode": 387162668,
+        "HashCode": 149613640,
         "Kind": "Components.Component",
-        "Name": "DlvrMeWeb.Pages.Home",
+        "Name": "DlvrMeWeb.Pages.Index",
         "AssemblyName": "DlvrMeWeb",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "Home"
+            "TagName": "Index"
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "DlvrMeWeb.Pages.Home"
+          "Common.TypeName": "DlvrMeWeb.Pages.Index"
         }
       },
       {
-        "HashCode": -1433375308,
+        "HashCode": -1317068757,
         "Kind": "Components.Component",
-        "Name": "DlvrMeWeb.Pages.Home",
+        "Name": "DlvrMeWeb.Pages.Index",
         "AssemblyName": "DlvrMeWeb",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "DlvrMeWeb.Pages.Home"
+            "TagName": "DlvrMeWeb.Pages.Index"
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "DlvrMeWeb.Pages.Home",
+          "Common.TypeName": "DlvrMeWeb.Pages.Index",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -206,6 +206,59 @@
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
           "Common.TypeName": "DlvrMeWeb.App",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": -91295408,
+        "Kind": "Components.Component",
+        "Name": "DlvrMeWeb.Shared.SurveyPrompt",
+        "AssemblyName": "DlvrMeWeb",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "SurveyPrompt"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "Title",
+            "TypeName": "System.String",
+            "Metadata": {
+              "Common.PropertyName": "Title"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "DlvrMeWeb.Shared.SurveyPrompt"
+        }
+      },
+      {
+        "HashCode": 1348665353,
+        "Kind": "Components.Component",
+        "Name": "DlvrMeWeb.Shared.SurveyPrompt",
+        "AssemblyName": "DlvrMeWeb",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "DlvrMeWeb.Shared.SurveyPrompt"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "Title",
+            "TypeName": "System.String",
+            "Metadata": {
+              "Common.PropertyName": "Title"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "DlvrMeWeb.Shared.SurveyPrompt",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -335,59 +388,6 @@
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
           "Common.TypeName": "DlvrMeWeb.Shared.NavMenu",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": -91295408,
-        "Kind": "Components.Component",
-        "Name": "DlvrMeWeb.Shared.SurveyPrompt",
-        "AssemblyName": "DlvrMeWeb",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "SurveyPrompt"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Title",
-            "TypeName": "System.String",
-            "Metadata": {
-              "Common.PropertyName": "Title"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "DlvrMeWeb.Shared.SurveyPrompt"
-        }
-      },
-      {
-        "HashCode": 1348665353,
-        "Kind": "Components.Component",
-        "Name": "DlvrMeWeb.Shared.SurveyPrompt",
-        "AssemblyName": "DlvrMeWeb",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "DlvrMeWeb.Shared.SurveyPrompt"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Title",
-            "TypeName": "System.String",
-            "Metadata": {
-              "Common.PropertyName": "Title"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "DlvrMeWeb.Shared.SurveyPrompt",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },

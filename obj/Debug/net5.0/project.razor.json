@@ -45,72 +45,6 @@
         }
       },
       {
-        "HashCode": 1907131256,
-        "Kind": "Components.Component",
-        "Name": "DlvrMeWeb.Pages.OrderForm",
-        "AssemblyName": "DlvrMeWeb",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "OrderForm"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "DlvrMeWeb.Pages.OrderForm"
-        }
-      },
-      {
-        "HashCode": -216348169,
-        "Kind": "Components.Component",
-        "Name": "DlvrMeWeb.Pages.OrderForm",
-        "AssemblyName": "DlvrMeWeb",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "DlvrMeWeb.Pages.OrderForm"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "DlvrMeWeb.Pages.OrderForm",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": -628523138,
-        "Kind": "Components.Component",
-        "Name": "DlvrMeWeb.Pages.Signup",
-        "AssemblyName": "DlvrMeWeb",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Signup"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "DlvrMeWeb.Pages.Signup"
-        }
-      },
-      {
-        "HashCode": 421442382,
-        "Kind": "Components.Component",
-        "Name": "DlvrMeWeb.Pages.Signup",
-        "AssemblyName": "DlvrMeWeb",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "DlvrMeWeb.Pages.Signup"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "DlvrMeWeb.Pages.Signup",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
         "HashCode": 149613640,
         "Kind": "Components.Component",
         "Name": "DlvrMeWeb.Pages.Index",
@@ -144,6 +78,39 @@
         }
       },
       {
+        "HashCode": 1907131256,
+        "Kind": "Components.Component",
+        "Name": "DlvrMeWeb.Pages.OrderForm",
+        "AssemblyName": "DlvrMeWeb",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "OrderForm"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "DlvrMeWeb.Pages.OrderForm"
+        }
+      },
+      {
+        "HashCode": -216348169,
+        "Kind": "Components.Component",
+        "Name": "DlvrMeWeb.Pages.OrderForm",
+        "AssemblyName": "DlvrMeWeb",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "DlvrMeWeb.Pages.OrderForm"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "DlvrMeWeb.Pages.OrderForm",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
         "HashCode": 2043743406,
         "Kind": "Components.Component",
         "Name": "DlvrMeWeb.Pages.OrderMap",
@@ -173,6 +140,39 @@
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
           "Common.TypeName": "DlvrMeWeb.Pages.OrderMap",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": -628523138,
+        "Kind": "Components.Component",
+        "Name": "DlvrMeWeb.Pages.Signup",
+        "AssemblyName": "DlvrMeWeb",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Signup"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "DlvrMeWeb.Pages.Signup"
+        }
+      },
+      {
+        "HashCode": 421442382,
+        "Kind": "Components.Component",
+        "Name": "DlvrMeWeb.Pages.Signup",
+        "AssemblyName": "DlvrMeWeb",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "DlvrMeWeb.Pages.Signup"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "DlvrMeWeb.Pages.Signup",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
